@@ -1,9 +1,8 @@
 # Cadillacs and Dinosaurs Readjusted
 A mod for the Cadillacs and Dinosaurs (Arcade).
 <br/>
-
 This mod brings some extra features and fixes some bugs present in the original game.
-<br/>
+<br/><br/>
 You can access the patcher [here](https://gamehackfan.github.io/dinore/).
 <br/><br/>
 
