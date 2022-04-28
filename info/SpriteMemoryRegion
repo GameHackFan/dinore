@@ -1,0 +1,19 @@
+904000:   Sprites Start Region (8 Bytes each sprite)
+907FFF:   Sprites End Region
+908000:   HUD, Texts, etc Sprites Start Region
+90BFFF:   HUD, Texts, etc Sprites End Region
+90C000:   Floor Sprites Start Region
+90FFFF:   Floor Sprites Start End
+910000:   Background Sprites Start Region
+913FFF:   Background Sprites End Region
+914000:   Palletes
+
+
+
+
+Palletes
+
+B8A52:
+B8A72:
+B8A92:
+B8AB2:

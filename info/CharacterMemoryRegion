@@ -1,0 +1,43 @@
+FFB274:   Player 1 Character Memory Region
+FFB3F4:   Player 2 Character Memory Region
+FFB574:   Player 3 Character Memory Region
+xxxx0C:   Air position (Height)
+xxxx10:   Ground position Y
+
+xxx182:   Extra Life Flag (use it to fix the immortal bug)
+
+
+FFD364:   1st enemy memory region?
+xxxx03:   Enemy ID
+xxxx06:   Action / Posture ID?
+xxxx6A:   Starting HP (Max 64)
+xxxx6C:   Current HP
+
+
+FFDD14:   Boss Memory Region?
+xxxx76:   Slice Target
+xxxxA2:   Slice Possible Target P1
+xxxxA4:   Slice Possible Target P2
+xxxxA6:   Slice Possible Target P3
+xxxxC4:   Slice Timer
+
+
+
+
+
+
+4C008:   Slice timer decrease.
+4C00E:   Slice timer reset code, add here too a reset to the targeting.
+
+
+
+14574:   Replace this code
+145CA:   Code that adds the sprite in the screen?
+
+
+
+
+
+smaller address - bigger address
+lsr 2 for title screen, lsr 7 for in game things
+and 3, now you have 0, 1 and 2
