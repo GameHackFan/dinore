@@ -3,8 +3,6 @@ A mod for the Cadillacs and Dinosaurs (Arcade).
 <br/>
 
 This mod brings some extra features and fixes some bugs present in the original game.
-It was made for 3 players, so even if you're going to play alone, configure it on
-service menu to 3 players.
 <br/><br/>
 
 Version v1.0:
