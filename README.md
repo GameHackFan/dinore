@@ -40,7 +40,7 @@ Version v1.0:
 - Bazooka bullets were increased from 4 to 6.
 - Rifle bullets were increased from 6 to 8.
 - Added a code to better handle coin score, now the player that join the battle in the middle of the game will not force all players to increase their coin score, only his own coin score will be increased.
-- Play Mode is now limited to 3 players only (1 or 3 chute).
+- Play Mode is now limited to 3 players only (3 chute).
 - Added a new text to the title screen displaying the name of the hack and version.
 
 See all changes made [here](https://github.com/GameHackFan/dinore/blob/main/changelog).
