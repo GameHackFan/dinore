@@ -3,6 +3,7 @@ A mod for the Cadillacs and Dinosaurs (Arcade).
 <br/>
 
 This mod brings some extra features and fixes some bugs present in the original game.
+You can access the patcher [here](https://gamehackfan.github.io/dinore/).
 <br/><br/>
 
 Version v1.0:
