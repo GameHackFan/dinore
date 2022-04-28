@@ -1,5 +1,5 @@
 # Cadillacs and Dinosaurs Readjusted
-A mod for the Cadillacs and Dinosaurs (Arcade).
+A mod for the Cadillacs and Dinosaurs (World, Arcade).
 <br/>
 This mod brings some extra features and fixes some bugs present in the original game.
 <br/><br/>
