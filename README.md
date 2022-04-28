@@ -50,7 +50,7 @@ Known Bugs:
 - If you hit butcher and your partner at the same time, all players become immortal (bug present in the original game).
 - Sometimes the game throws an exception and it crashes, I saw that happen only on 4th stage, have no clue how it happens and why, it might also happen on other stages (bug present in the original game).
 - Players can grab enemies from far away and sometimes even when they are in the air (bug present in the original game).
-- Tyrog puke for some reason is not grabbing pallete 3, it is grabbing pallete 0 (P2) instead (Readjusted version bug).
+- Tyrog puke for some reason is not grabbing pallete 3, it is grabbing pallete 1 (P2) instead (Readjusted version bug).
 - On 3rd Stage, sometimes the pallete of the CPU driver bugs (Readjusted version bug).
 <br/><br/>
 
