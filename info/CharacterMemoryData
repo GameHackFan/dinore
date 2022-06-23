@@ -2,7 +2,9 @@ FFB274:   Player 1 Character Memory Region
 FFB3F4:   Player 2 Character Memory Region
 FFB574:   Player 3 Character Memory Region
 xxxx0C:   Air position (Height)
+xxxx08:   Ground position X
 xxxx10:   Ground position Y
+xxxxC6:   Current Power
 
 xxx182:   Extra Life Flag (use it to fix the immortal bug)
 
@@ -12,14 +14,33 @@ xxxx03:   Enemy ID
 xxxx06:   Action / Posture ID?
 xxxx6A:   Starting HP (Max 64)
 xxxx6C:   Current HP
+xxxx9A:   Dizzy Flag
 
 
 FFDD14:   Boss Memory Region?
+xxxx06.B: Enemy action (Walk, Idle, Punch, etc.)
 xxxx76:   Slice Target
 xxxxA2:   Slice Possible Target P1
 xxxxA4:   Slice Possible Target P2
 xxxxA6:   Slice Possible Target P3
 xxxxC4:   Slice Timer
+xxxx79:   Enemies unknown timer
+
+
+
+
+Morgan Actions
+
+0E:   Punch with Uzi.
+1E:   Throw Grenades.
+
+
+Tyrog
+
+0E:   Slap.
+50:   Spine Attack.
+
+
 
 
 

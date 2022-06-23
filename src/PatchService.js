@@ -19,6 +19,7 @@ class PatchService
       romService.setROM(extras.actionData);
       romService.cloneROM();
       romService.applyPatch(readjustedPatch);
+      romService.applyPatch(dataPatch);
       let newExtras = {fileObject: romService.getGeneratedROM()};
       newExtras.successCallback = this.onZipFileCreated;
       newExtras.errorCallback = this.onError;

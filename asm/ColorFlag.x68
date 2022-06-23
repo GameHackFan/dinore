@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Color Flag
+* Title:        DINORE Color Flag
 * Written by:   GameHackFan
 * Date:         
 * Description:  It forces the custom color flag and pallete id to the players.
@@ -7,7 +7,7 @@
 
 ; ORG         $180600
 
-                                        ; Block of code sets the player custom pallete flags.
+                                        ; Block of code that sets the player custom pallete flags.
   MOVE.W      #$EDCB, ($17E, A6)        ; Stores EDCB inside ($17E + A6), custom pallete flag.
   SWAP        D6                        ; Invert D6 higher and lower bits, lower bits are used in a loop.
   MOVE.W      A6, D6                    ; Stores A6 inside D6, current player memory region.
@@ -43,13 +43,13 @@
 
 
 
-  JMP         $180680.L                 ; Code to jump to the new code that maps the players to their seats (replace 8BD66).
+  JMP         $180680.L                 ; Replace 8BD66.
 
 ; ORG         $180680
 
                                         ; Block of code that checks who is the current player and maps the seats.
   MOVE.W      D6, ($7FE0, A5)           ; Stores D6 inside ($7FE0 + A5), saves D6 value for safety.
-  MOVE.W      ($7C, A2), D6             ; Stores ($7C + A2) inside D6, player ID.
+  MOVE.W      ($7C, A2), D6             ; Stores ($7C + A2) inside D6, the player ID.
   TST.W       D6                        ; Compares 0 and D6, 0 if it is P1.
   BEQ         $1806BA                   ; If it is 0, go to the 4th block of code.
   BTST        #1, D6                    ; Test 2nd bit of D6, 0 for P1, 0 for P2, 1 for P3.
@@ -81,7 +81,7 @@
 
 
 
-  JMP         $180700                   ; Code to jump to the new code that sets the car color flags (replace 96FDE).
+  JMP         $180700                   ; Replace 96FDE.
   NOP
   NOP
   NOP
@@ -95,7 +95,7 @@
   MOVE.W      D0, D6                    ; Stores D0 inside D6, the seat ID.
   ADD.W       D6, D6                    ; Adds D6 to D6, doubles it because pallete ID is 2 bytes.
   ADD.W       #$7F12, D6                ; Adds 7F12 to D6, the seat 1 offset.
-  MOVE.W      (A5, D6.W), D6            ; Stores (A5 + D6.W), pallete ID inside the seat.
+  MOVE.W      (A5, D6.W), D6            ; Stores (A5 + D6.W) inside D6, pallete ID inside the seat.
   MOVE.W      D6, ($FC, A0)             ; Stores D6 inside ($FC + A0), the pallete ID in the memory region.
   MOVE.W      #$EDCB, ($FE, A0)         ; Stores EDCB inside ($FE + A0), custom pallete flag.
   MOVE.W      #$90, ($20, A0)           ; Code from the original game that was replaced to jump to this code.
@@ -106,7 +106,11 @@
 
 
 
-  JMP         $180740.L                 ; Code to jump to the new code that sets the inside car flag (replace 8C006).
+  JMP         $180740.L                 ; Replace 8C006.
+  NOP
+  NOP
+  NOP
+  NOP
 
 ; ORG         $180740
 
@@ -120,7 +124,7 @@
 
 
 
-  JMP         $180780.L                 ; Code to jump to the new code that clears car color flags (replace 8C836).
+  JMP         $180780.L                 ; Replace 8C836.
   NOP
   NOP
   NOP
@@ -138,7 +142,7 @@
 
 
 
-; ORG         $8C7B0                    ; There is space to replace everything without a jump (replace 8C7B0)
+; ORG         $8C7B0                    ; Replace 8C7B0 (There is space to replace everything without a jump).
 
                                         ; Block of code that forces Hannah to be the driver.
   MOVE.B      #2, ($A2, A6)             ; Stores 2 inside ($A2 + A6), Hannah ID, she has her original pallete.
@@ -160,8 +164,16 @@
 
 
 
-; This module provides routines that handle 
-; the color flags. It also execute several 
-; routines to ensure the color flags are 
-; properly set so the custom color feature 
-; can work as intended.
+; This module provides routines that handle the 
+; color flags. It also executes several routines 
+; that properly set the color flags, to ensure that  
+; the custom color feature will work as intended.
+;
+; 180600:   Sets Custom Pallete Flags (Current Player)
+; 180630:   Clear Custom Car Flags
+; 180660:   Clears Custom Pallete Flags
+; 180680:   Sets Custom Car Flags / Maps Players in the Seats (Current Player)
+; 180700:   Sets Car Color Flags (Current Player)
+; 180740:   Sets Inside Car Flag
+; 180780:   Clear Custom Car Flags Caller
+; 08C7B0:   Forces Hannah to be the Driver

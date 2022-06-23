@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Title Screen Text
+* Title:        DINORE Title Screen Text
 * Written by:   GameHackFan
 * Date:         
 * Description:  Add extra text to the title screen.
@@ -18,6 +18,8 @@
   BRA         $181000                   ; Jumps back to the 1st line.
   RTS                                   ; Returns back to the routine that called this code.
 
+
+
 ; ORG         $181030
 
                                         ; Block of code that prints the hack name and version in the screen.
@@ -25,9 +27,12 @@
   MOVE.L      D1, ($7FE4, A5)           ; Stores D1 inside ($7FE4 + A5), saves it for safety.
   MOVE.L      A0, ($7FE8, A5)           ; Stores A0 inside ($7FE8 + A5), saves it for safety.
   MOVE.L      A1, ($7FEC, A5)           ; Stores A1 inside ($7FEC + A5), saves it for safety.
-  LEA         $1810E0, A1               ; Stores $1810E0, The text address.
-  LEA         $90A440, A0               ; Stores $90A440, The screen region of the text.
   MOVE.W      #$1E, D1                  ; Stores 1E inside D1, the pallete id of the text.
+  LEA         $181100, A1               ; Stores $181100 inside A1, The text address.
+  LEA         $90A440, A0               ; Stores $90A440 inside A0, The screen region of the text.
+  BSR         $181000                   ; Calls the routine that prints stuff in the screen.
+  LEA         $181130, A1               ; Stores $181130 inside A1, The text address.
+  LEA         $90A2C4, A0               ; Stores $90A2C4 inside A0, The screen region of the text.
   BSR         $181000                   ; Calls the routine that prints stuff in the screen.
   MOVE.L      ($7FE0, A5), D0           ; Stores ($7FE0 + A5) + D0 inside, restore the value.
   MOVE.L      ($7FE4, A5), D1           ; Stores ($7FE4 + A5) + D1 inside, restore the value.
@@ -36,27 +41,30 @@
   RTS                                   ; Returns back to the routine that called this code.
 
 
-  JMP         $181080.L                 ; Code to jump to the new code that prints the hack text in the title screen (replace 9A54E).
 
-; ORG         $181080
+  JMP         $1810A0.L                 ; Replace 9A54E.
+
+; ORG         $1810A0
 
   JSR         $BB6                      ; Code from the original game that was replaced to jump to this code.
   BSR         $181030                   ; Calls the routine that prints the hack name and version.
   JMP         $9A554                    ; Jumps back to where it stopped in the original code.
 
 
-  JMP         $1810A0.L                 ; Code to jump to the new code that prints the hack text in the title screen (replace 9A572).
 
-; ORG         $1810A0
+  JMP         $1810C0.L                 ; Replace 9A572.
+
+; ORG         $1810C0
 
   JSR         $B52                      ; Code from the original game that was replaced to jump to this code.
   BSR         $181030                   ; Calls the routine that prints the hack name and version.
   JMP         $9A578                    ; Jumps back to where it stopped in the original code.
 
 
-  JMP         $1810C0.L                 ; Code to jump to the new code that prints the hack text in the title screen (replace 9D6FA).
 
-; ORG         $1810C0
+  JMP         $1810E0.L                 ; Replace 9D6FA.
+
+; ORG         $1810E0
 
   JSR         $C0A                      ; Code from the original game that was replaced to jump to this code.
   BSR         $181030                   ; Calls the routine that prints the hack name and version.
@@ -65,7 +73,24 @@
 
 
 ; This module has routines to print in line 
-; sprites and to print the hack name and version 
-; text. It also executes all the necessary 
-; routines to print the hack name and text in 
+; sprites and to print the hack name, version 
+; and project link text. It also executes all 
+; the necessary routines to print those texts 
 ; in the title screen.
+;
+; $181000:    Draw Sprites in Line
+; $181030:    Draw Hack Texts on Screen 
+; $1810A0:    Draw Hack Texts on Screen Caller (Title Screen No Coin)
+; $1810C0:    Draw Hack Texts on Screen Caller (Title Screen No Coin)
+; $1810E0:    Draw Hack Texts on Screen Caller (Title Screen With Coin)
+;
+; $181100:    Hack Name and Version Text
+;             Add the text bytes bellow.
+; 65 52 64 61 75 6A 74 73 64 65 76 20 2E 31 20 30
+; 62 28 20 79 61 47 65 6D 61 48 6B 63 61 46 29 6E
+;
+; $181130:    Project Link Text
+;             Add the text bytes bellow.
+; 74 68 70 74 3A 73 2F 2F 69 67 68 74 62 75 63 2E
+; 6D 6F 47 2F 6D 61 48 65 63 61 46 6B 6E 61 64 2F
+; 6E 69 72 6F 00 65 00 00 00 00 00 00 00 00 00 00

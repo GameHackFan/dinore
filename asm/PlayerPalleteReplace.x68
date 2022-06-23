@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Player Pallete Replace
+* Title:        DINORE Player Pallete Replace
 * Written by:   GameHackFan
 * Date:         
 * Description:  It sets the pallete ID with the color selected by the player.
@@ -35,14 +35,15 @@
   MOVE.W      (A0)+, D0                 ; Stores (A0) inside D0 and incremente A0, the color.
   OR.W        D7, D0                    ; D0 or D7, adds the current brightness to the color.
   MOVE.W      D0, (A3)+                 ; Stores D0 inside (A3) and increment A3, set the color.
-  DBRA        D1, $180838               ; Loops back to the code that sets the color, 2nd line of this block.
+  DBRA        D1, $180838               ; If D1 is bigger than 0, go back to the 2nd line of this block.
   RTS                                   ; Returns back to the caller of this routine.
+
 
 
 ; ORG         $180860
 
                                         ; Block of code that saves some values for safety.
-  MOVE.L      D5, ($7FDC, A5)           ; Stores D5 inside ($7FE0 + A5), for safety.
+  MOVE.L      D5, ($7FDC, A5)           ; Stores D5 inside ($7FDC + A5), for safety.
   MOVE.L      D6, ($7FE0, A5)           ; Stores D6 inside ($7FE0 + A5), for safety.
   MOVE.L      D7, ($7FE4, A5)           ; Stores D7 inside ($7FE4 + A5), for safety.
   MOVE.L      A1, ($7FE8, A5)           ; Stores A1 inside ($7FE8 + A5), for safety.
@@ -74,7 +75,7 @@
   MOVE.L      ($7FEC, A5), A2           ; Stores ($7FEC + A5) inside A2, restores the value.
   RTS                                   ; Returns back to the caller of this routine.
 
-                                        ; Block of code that sets the player in the pallete region.
+                                        ; Block of code that sets the player pallete in the pallete region.
   TST.B       (A5, D7.W)                ; Compares 0 and (A5 + D7.W), the player active flag.
   BEQ         $1808EC                   ; If it is 0, player is not active, go to last line.
   LEA         $1A0000, A2               ; Stores 1A0000 to A2, main characters pallete offset.
@@ -92,7 +93,7 @@
   MOVE.W      (A2)+, D5                 ; Stores (A2) inside D5 and incremente A2, the color.
   OR.W        D6, D5                    ; D6 or D5, adds the current brightness to the color.
   MOVE.W      D5, (A1)+                 ; Stores D5 inside (A1) and increment A1, sets the color.
-  DBRA        D7, $1808E2               ; Loops back to the code that sets the color, 3 lines above.
+  DBRA        D7, $1808E2               ; If D1 is bigger than 0, go back 3 lines above.
   RTS                                   ; Returns back to the caller of this routine.
 
 
@@ -101,3 +102,6 @@
 ; replacing the colors of the palletes that 
 ; will be used by the players with the colors 
 ; of the pallete they selected.
+; 
+; $180800:    Replace Pallete (Current Player)
+; $180860:    Replace Pallete (All Players)

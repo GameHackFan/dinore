@@ -6,42 +6,34 @@ This mod brings some extra features and fixes some bugs present in the original 
 You can access the patcher [here](https://gamehackfan.github.io/dinore/).
 <br/><br/>
 
-Version v1.0:
-- Added Color Select Feature, see changes A to G.
-- Change A: Jack, Hannah, Mustapha and Mess now have original + 7 extra colors.
-- Change B: The palletes 0 (Jack), 1 (Hannah), 2 (Mustapha) are now P1, P2 and P3 palletes.
-- Change C: Other sprites that were using pallete 0, 1, 2, 3 are now using palletes 16, 03, 15 and 18 (Razor, Mess, Blade, Thug palletes).
-- Change D: Pallete 16 was changed to better support the new sprites attached to it (Jack pallete is used by knives and other stuff, so they need a compatible pallete to not look terrible, unfortunately, Razor now has a different colors because of that).
-- Change E: Pallete 3 was replaced with Hannah's pallete to better support the new sprites attached to it (Mess doesn't need a pallete anymore, so added Hannah's pallete since it is used on body parts, blood and other stuff).
-- Change F: Labels were added to represent the color selected, when selecting the character, press up or down to change the color.
-- Change G: Forced Hannah to always be the driver of the car on 3rd stage due to her pallete be always available on Pallete 3.
-- Added changes related to how some bosses select their target, See changes H to M.
-- Change H: Slice might change his target when knocked down (no more corner bug, you have to fight him for real now).
-- Change I: Tyrog might change his target when knocked down.
-- Change J: Slisaur might change his target when knocked down (no more corner bug, you have to fight them for real now).
-- Change K: Fessenden 1st form can now target any player (he is not locked to P2 if 2 people are playing or to P3 if 3 people are playing).
-- Change L: Fessenden 2nd form might change his target when knocked down (no more stupid fights where he only walks, takes a beating and keep looking at your face).
-- Change M: Fessenden 2nd form will change his target if on a clinch, he will automatically target the player that clinched him (no more clinch and beat him 3 hits and repeat forever while he does nothing until he dies).
-- Changed some of the team special actions mostly due to 2 equal characters, see changes N to Q.
-- Change N: Jack when pushing another Jack, the action will be the same as Mustapha's throw to the air, this change is needed or the game crashes since Jack doesn't have a team tag run animation cause no one else can push him in the game.
-- Change O: Hannah when throwing Jack to the air, Jack will use the animation he uses when being thrown by Mustapha (the original one looks bugged, he temporarily runs in the air).
-- Change P: Mustapha when throwing another Mustapha to the air, Mustapha will use the animation he uses when being thrown by Hannah.
-- Change Q: Mess when throwing another Mess to the air, Mess will use the animation he uses when being thrown by Mustapha.
-- Added changes to allow players to select the same character.
-- Fixed extra life immortal bug (players could become immortal after getting an extra life).
-- Increased 3rd Stage time from 3 minutes to 7 minutes, it can be finished without dying on time if you decide to not take the car now.
-- Increased 5th Boss time, from 3 minutes and 50 seconds to 6 minutes.
-- Increased 6th Boss time, from 3 minutes and 50 seconds to 6 minutes.
-- Increased Final Boss time, from 4 minutes to 6 minutes.
-- After a player die or use a coin, the time increase limit was changed from 4 minutes to 8 minutes.
-- Punch + Jump Attack invulnerability after it is finished is now reduced from 60 frames to 16 (no more running from enemies and using it to become immortal, then no one can hit you and you demolish everyone).
-- Punch + Jump Attack damage taken was reduced, 1st hit from 10 to 3, 2nd hit from 4 to 1. Now it can be used as it should, to avoid problematic situations without wasting all your HP.
-- Jack, Hannah and Mustapha Punch + Attack damage given was reduced from 20 to 10, Mess from 23 to 11. Keep in mind the game recalculates it based on your current power (power changes as you take a hit).
-- Bazooka bullets were increased from 4 to 6.
-- Rifle bullets were increased from 6 to 8.
-- Added a code to better handle coin score, now the player that join the battle in the middle of the game will not force all players to increase their coin score, only his own coin score will be increased.
-- Play Mode is now limited to 3 players only (3 chute).
-- Added a new text to the title screen displaying the name of the hack and version.
+Version v1.1:
+- Improved Hannah's 2nd and 5th Color.
+- Improved Mess' 5th Color.
+- Improved Mustapha's 2nd Color.
+- Increased Final Boss time once more, now from 6 minutes to 8 minutes.
+- Increased 7th Boss time from 3 minutes and 50 seconds to 8 minutes.
+- Removed unused ColorConfirmation code.
+- Improved the ColorConfirmation code, it is way more cleaner now.
+- Added to the title screen a link to the project on github.
+- Improved the enemy update target code, it is cleaner now.
+- Coded GameDifficultyImprovement, it increases the difficulty, enemies attack more now.
+- Coded PowerIndicator, it has routines to draw the current power of the player in the HUD area.
+- Renamed ColorSelectManager to FeatureManager and added the a caller to the power indicator.
+- Coded EnemyInvulnerabilityImprovement, see changes A to D.
+- Change A: Coded a logic to allow a timer of the enemies to be used as a timer to handle invulnerability, it will turn enemies vulnerable again.
+- Change B: Added a table with flags that specify what enemies can be invulnerable.
+- Change C: Added a code to allow enemies to be invulnerable if their flag is active (will be called when the enemy is knocked out).
+- Change D: Made Butcher, Slice, Morgan, Morgue, Tyrog and Fessenden 1st Form flag active in the table, which allow them to be invulnerable at some point.
+- Change E: Adapted a code called by enemies to better support the invulnerability feature.
+- Change F: This feature will ensure Butcher, Slice, Morgan, Tyrog and Fessenden 1st Form to be invulnerable when they get knocked down for 60 frames (loop punch them to death is now gone, you have to fight them for real).
+- OBS: Didn't Add Slisaur to the list since they are more than 1, that would make them a nightmare and looping them into a combo is one of the few things the players can do now to beat them.
+- Updated EnemyActionCallback, improved enemy knock down callback and made it also call the new invulnerability code.
+- Changed Morgan get up attack that is executed if the player is near him, he no longer gets up punching you with his gun, he gets up trying to move now (this removes a weakness that allowed the player to go inside him and loop combo him to death).
+- Changed Tyrog get up automatic attack that is executed if the player is near him, he no longer gets up slapping, he gets up trying to move (this removes a weakness that allowed the player to go inside him and loop combo him to death).
+- Changed Slisaur get up action, now if he gets knocked out of screen, he will get up straight to his aggressive action (that makes beating them on corner even harder, Mustapha with his 
+big range was having a reasonable chance to beat slisaur slash attack, even if he is the target, now it is way more risky).
+- Fixed Punch + Jump Attack damage taken doing more damage than it should in case an object was hit.
+- Punch + Jump Attack no longer makes enemies dizzy, since this attack now does very little damage to the player (for some reason, in the original game, only Hannah, Mustapha and Mess Punch + Jump Attack make enemies dizzy, but for Jack it is like any attack that causes a knock down, being random if the enemy is going to become dizzy or not, taking in consideration that the dizzy feature in the original game also has a protection, if the enemy is knocked down, when he wakes up he has a 1 second tolerance that doesn't let him be dizzy by any attack, even the Punch + Jump Attack).
 
 See all changes made [here](https://github.com/GameHackFan/dinore/blob/main/changelog).
 <br/><br/>
@@ -51,7 +43,13 @@ Known Bugs:
 - If you hit butcher and your partner at the same time, all players become immortal (bug present in the original game).
 - Sometimes the game throws an exception and it crashes, I saw that happen only on 4th stage, have no clue how it happens and why, it might also happen on other stages (bug present in the original game).
 - Players can grab enemies from far away and sometimes even when they are in the air (bug present in the original game).
-- Tyrog puke for some reason is not grabbing pallete 3, it is grabbing pallete 1 (P2) instead (Readjusted version bug).
+- 2nd Form of Final Boss can be double or triple comboed by players, he dies without even moving (bug present in the original game).
+- If you get an extra life in the score count screen at the end of a stage, you character doesn't cheer for defeating the boss and also stop moving, but it goes back to normal as soon as the next stage loads (bug present in the original game).
+- Tyrog puke for some reason is not grabbing pallete 3, it is grabbing pallete 1 / P2 instead (Readjusted version bug).
 - On 3rd Stage, sometimes the pallete of the CPU driver bugs (Readjusted version bug).
+- Gameplay demo is grabbing the new colors instead of the originals (Readjusted version bug).
 <br/><br/>
 
+
+
+WHAT'S NEXT: There isn't much left to do for this hack, maybe adjust some of the changes made. Forcing the sprites to use different palletes by changing their pallete values inside the ROM instead of remapping them when the game is running is one of the few major things left to improve.

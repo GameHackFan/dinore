@@ -1,3 +1,11 @@
+FF8744.W:   Camera Position.
+
+
+FF847D.B:   P1 Coin Amount
+FF848D.B:   P2 Coin Amount
+FF849D.B:   P3 Coin Amount
+
+
 FF84D9.B:   Stage ID
 FF84E8.L:   Stage Time
 FF8634.L:   Character Select Screen Time
@@ -7,6 +15,7 @@ FF863A:     Player 1 Character ID
 FF8786:     Area ID
 
 
+FFF768:     Game Difficulty 1
 
 
 

@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Color Select
+* Title:        DINORE Color Select
 * Written by:   GameHackFan
 * Date:         
 * Description:  It has routines that handle changing the selected color.
@@ -73,3 +73,6 @@
 
 ; This module provides routines that handle 
 ; the color select.
+;
+; 180300:   Handles Color Select (Select Screen)
+; 180360:   Handles Color Select (Mid Game)

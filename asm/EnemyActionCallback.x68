@@ -1,37 +1,42 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Enemy Action Callback
+* Title:        DINORE Enemy Action Callback
 * Written by:   GameHackFan
 * Date:         
-* Description:  It call routines when the enemies are knocked down.
+* Description:  It call routines when things happens to the 
+*               enemies, like being knocked down, clinched,
+*               etc.
 *----------------------------------------------------------------------------------------------
  
-  JSR         $180C00.L                 ; Code to jump to the new code that calls extra routines when the enemy is knocked down (replace 02A832, 02ABE4).
-  NOP
-  NOP
+  JMP         $180C00.L                 ; Replace 2AFE4.
 
 ; ORG         $180C00
 
-  JSR         $9796.L                   ; Code from the original game that was replaced to jump to this code.
-  ADDQ.B      #2, ($7, A6)              ; Code from the original game that was replaced to jump to this code.
-  CMP.B       #6, ($7, A6)              ; Compares 6 and ($7 + A6), 6 happens when the character is down.
-  BNE         $180C16                   ; If it is not 6, ignore the line below
+                                        ; Block of code that calls extra routines when the enemy is knocked out.
+  MOVE.B      #$1A, ($6, A6)            ; Code from the original game that was replaced to jump to this code.
   BSR         $180D00                   ; Calls the code that tries to updated the target.
-  RTS                                   ; Code from the original game that was replaced to jump to this code.
+  BSR         $181400                   ; Calls the code that tries to add invulnerability.
+  BSR         $181800                   ; Calls the code that tries to change get up action for Slisaur.
+  JMP         $2AFEA                    ; Jumps back to where it stopped in the original code.
 
 
-  JMP         $180C30.L                 ; Code to jump to the new code that calls extra routines when the enemy is on clinch (replace 108DE).
+
+  JMP         $180C30.L                 ; Replace 108DE.
 
 ; ORG         $180C30
 
-  BSR         $180DD0                   ; Calls the code that tries to updated the targets for Fessenden 2nd form.
+  BSR         $180DE0                   ; Calls the code that tries to updated the targets for Fessenden 2nd form.
   MOVE.B      #$E, ($2E, A3)            ; Code from the original game that was replaced to jump to this code.
   JMP         $108E4                    ; Jumps back to where it stopped in the original code.
 
 
 
-; This module is capable of executing 
-; routines when certain things happens
-; to the enemies, like being knocked down 
-; being clinched. For now, it only executes
-; routines that change the target for some
-; specific enemies when these actions happen.
+; This module has callback routines that is capable 
+; of executing other routines when certain things 
+; happens to the enemies, like being knocked down, 
+; being clinched, etc. Routines that changes the 
+; enemy's target, adds invulnerability to the enemies 
+; are being called in some of the callbacks available 
+; here.
+; 
+; 180C00:   Enemy Knocked Down Callback (Current Enemy)
+; 180C30:   Enemy Being Clinched Callback (Current Enemy)

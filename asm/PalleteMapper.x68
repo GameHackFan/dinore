@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Pallete Mapper
+* Title:        DINORE Pallete Mapper
 * Written by:   GameHackFan
 * Date:         
 * Description:  Forces Jack, Hannah, Mustapha and Mess to use
@@ -35,7 +35,7 @@
 
 
 
-  JSR         $180950.L                 ; Code to jump to the new code that forces sets the correct palletes to the sprites (replace 1433E, 14390, 14436, 14488, 1450A, 145C6, 146CA, 14786, 14C2E, 14C90).
+  JSR         $180950.L                 ; Replace 1433E, 14390, 14436, 14488, 1450A, 145C6, 146CA, 14786, 14C2E, 14C90.
 
 ; ORG         $180950
 
@@ -53,7 +53,7 @@
   BLT         $18096C                   ; If it is bigger than 3, go to the last 2 lines.
   ADD.B       D6, D3                    ; Adds D6 to D3, the custom pallete ID to the pallete ID.
   BRA         $180970                   ; Jumps to the last line of this block.
-  ADD.B       ($12, PC, D2.W), D3       ; Adds ($18 + PC + D2.W) to D3, the new pallete id.
+  ADD.B       ($12, PC, D2.W), D3       ; Adds ($12 + PC + D2.W) to D3, the new pallete id.
   SWAP        D6                        ; Invert D6 higher and lower bits, lower bits are used in a loop.
 
                                         ; Block of code that executes the code replaced and goes back.
@@ -65,11 +65,11 @@
 
 
 
-  JMP         $1809A0.L                 ; Code to jump to the new code that sets the custom pallete ID (replace 14054).
+  JMP         $1809A0.L                 ; Replace 14054.
 
 ; ORG         $1809A0
 
-                                        ; Block of code that executes the code replaced, the new code and go back.
+                                        ; Block of code calls the routine that calculates the pallete ID.
   MOVE.L      -(A6), D0                 ; Code from the original game that was replaced to jump to this code.
   MOVE.W      D0, A0                    ; Code from the original game that was replaced to jump to this code.
   MOVE.W      D7, -(A7)                 ; Code from the original game that was replaced to jump to this code.
@@ -78,22 +78,26 @@
 
 
 
-  JMP         $1809C0.L                 ; Code to jump to the new code that sets the custom pallete ID (replace 14122).
+  JMP         $1809C0.L                 ; Replace 14122.
 
 ; ORG         $1809C0
 
-                                        ; Block of code that executes the code replaced, the new code and go back.
+                                        ; Block of code calls the routine that calculates the pallete ID.
   MOVE.W      (A7)+, A0                 ; Code from the original game that was replaced to jump to this code.
   BSR         $180900                   ; Calls the block that calculates the pallete id.
   JMP         $14230                    ; Code from the original game readjusted.
 
 
 
-; This module provides routines that handle 
-; the pallete that the sprite should use. The 
-; palletes 0, 1 and 2 are being used by P1, P2
-; and P3, the sprites that uses the palletes 0, 
-; 1, 2 and 3 are now being forced to use the 
-; palletes 16, 3, 15 and 18. This module also 
-; executes several routines to ensure these 
-; pallete changes work as intended.
+; This module provides routines that handle the 
+; pallete that the sprite should use. The palletes 
+; 0, 1 and 2 are being used by P1, P2 and P3, the 
+; sprites that uses the palletes 0, 1, 2 and 3 are 
+; now being forced to use the palletes 16, 3, 15 and 
+; 18. This module also executes several routines to 
+; ensure these pallete changes work as intended.
+;
+; $180900:    Save Player / Pallete ID in D6.
+; $180950:    Readjust the Sprite Pallete ID (Current Game Object)
+; $1809A0:    Save Player / Pallete ID in D6 Caller (Current Game Object)
+; $1809C0:    Save Player / Pallete ID in D6 Caller (Current Game Object)

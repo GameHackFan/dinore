@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Idle Screen Pallete Fix
+* Title:        DINORE Idle Screen Pallete Fix
 * Written by:   GameHackFan
 * Date:         
 * Description:  Forces default palletes on profile screen, score screen and ending.
@@ -25,15 +25,15 @@
 
                                         ; Block of code that sets Mustapha's default pallete.
   LEA         $1A0100, A0               ; Stores 1A0100 inside A0, Mustapha's first pallete address.
-  LEA         $9142A0, A1               ; Stores 914040 inside A1, Blade's default pallete address.
+  LEA         $9142A0, A1               ; Stores 9142A0 inside A1, Blade's default pallete address.
   BSR         $180A5A                   ; Calls the routine that sets the colors.
 
                                         ; Block of code that sets Mess' default pallete.
   LEA         $1A0300, A0               ; Stores 1A0300 inside A0, Mess' first pallete address.
-  LEA         $914300, A1               ; Stores 914160 inside A1, Thug's default pallete address.
+  LEA         $914300, A1               ; Stores 914300 inside A1, Thug's default pallete address.
   BSR         $180A5A                   ; Calls the routine that sets the colors.
 
-                                        ; Block of code that saves values for safety.
+                                        ; Block of code that restores the values.
   MOVE.L      ($7FE0, A5), D0           ; Stores ($7FE0 + A5) inside D0, restore the value.
   MOVE.L      ($7FE4, A5), D1           ; Stores ($7FE4 + A5) inside D1, restore the value.
   MOVE.L      ($7FE8, A5), A0           ; Stores ($7FE8 + A5) inside A0, restore the value.
@@ -52,15 +52,15 @@
 
 ; ORG         $180A80
 
-                                        ; Block of code that clears all players active flag
+                                        ; Block of code that clears all players active flag.
   CLR.W       ($3274, A5)               ; Clears ($3274 + A5), P1 active flag.
-  CLR.W       ($33F4, A5)               ; Clears ($33F4 + A5), P1 active flag.
-  CLR.W       ($3574, A5)               ; Clears ($3574 + A5), P1 active flag.
+  CLR.W       ($33F4, A5)               ; Clears ($33F4 + A5), P2 active flag.
+  CLR.W       ($3574, A5)               ; Clears ($3574 + A5), P3 active flag.
   RTS                                   ; Returns back to the routine that called this code.
 
 
 
-  JSR         $180AA0.L                 ; Code to jump to the new code that sets the default palletes of all main characters (replace 151FE, 8AB9A, 9A828).
+  JSR         $180AA0.L                 ; Replace 151FE, 8AB9A, 9A828.
 
 ; ORG         $180AA0
                                         ; Block of code that fixes the palletes on score screen, 2nd ending scene, profile screen.
@@ -73,7 +73,7 @@
 
 
 
-  JMP         $180AD0.L                 ; Code to jump to the new code that sets the default palletes of all main characters (replace 1E6E2).
+  JMP         $180AD0.L                 ; Replace 1E6E2.
   NOP
   NOP
 
@@ -83,7 +83,7 @@
   BSR         $180A00                   ; Calls the routine that sets the default palletes of the main characters.
   MOVE.W      ($4E0, A5), A0            ; Code from the original game that was replaced to jump to this code.
   TST.B       ($A6, A0)                 ; Code from the original game that was replaced to jump to this code.
-  BEQ         $180AD0                   ; Code from the original game readjusted.
+  BEQ         $180AE8                   ; Code from the original game readjusted.
   JMP         $1E6EC                    ; Jumps back to where it stopped in the original code.
   JMP         $1E6F4                    ; Code from the original game readjusted.
 
@@ -95,3 +95,8 @@
 ; ending scenes. The pallete mapper codes 
 ; changes the way these main palletes work, 
 ; so this fix is needed.
+;
+; $180A00:    Set Main Characters Palletes to Default
+; $180A80:    Clears All Players Active Flag
+; $180AA0:    Set Main Characters Palletes to Default Caller (Score Screen, 2nd Ending Scene, Profile Screen)
+; $180AD0:    Set Main Characters Palletes to Default Caller (1st Ending Scene)

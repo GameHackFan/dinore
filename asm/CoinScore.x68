@@ -1,11 +1,11 @@
 *----------------------------------------------------------------------------------------------
-* Title:        CADE Coin Score
+* Title:        DINORE Coin Score
 * Written by:   GameHackFan
 * Date:         
 * Description:  Changes the way the coin score works.
 *----------------------------------------------------------------------------------------------
 
-  JMP         $181200.L                 ; Code to jump to the new code that fixes the coin score (replace 748C).
+  JMP         $181200.L                 ; Replace 7494.
   NOP
   NOP
   NOP
@@ -36,10 +36,14 @@
 
 
 
-
-
-; In the original game, every time a player
-; uses a coin mid game, it increases the coin
-; score for every single player. This fix 
-; forces the coin score to be increased only 
-; for the player that used the coin.
+; This module has a routine that forces the coin score 
+; to be increased only for the player that used a coin, 
+; instead of increasing the coin of all players when a 
+; player uses a coin. Because the original game increases 
+; the coin for all players when a player joins the game, 
+; if a player joins the game after he game over, the 
+; coin score of all players might go out of sync, so 
+; this fix not just removes that, it also allows the 
+; players to know how much coins each one of them used.
+;
+; 181200:   Coin Score Fix (Current Player)
