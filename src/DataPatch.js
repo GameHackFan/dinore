@@ -5,6 +5,11 @@ const dataPatch =
   byteFormat: "hex",
   data:
   {
+    // Tyrog Puke Pallete Fix (01 to 03 - 81 to 83)
+    "317120": ["83", "00"],
+
+
+
     // Jack Pallete 1 (Original)
     "1703936":
     [
@@ -216,13 +221,13 @@ const dataPatch =
       "A7", "05", "75", "02", "FF", "0F", "A9", "00"
     ],
 
-    // Hannah Pallete 8 (Brown and Green - Mess Like)
+    // Hannah Pallete 8 (Black and Green)
     "1704672":
     [
       "11", "01", "CB", "0F", "A8", "0E", "75", "0B",
-      "43", "08", "10", "05", "20", "07", "30", "08",
-      "60", "0C", "80", "0F", "FC", "0E", "C9", "0A",
-      "95", "06", "63", "03", "FF", "0F", "A9", "00"
+      "43", "08", "00", "00", "11", "01", "22", "02",
+      "33", "03", "55", "05", "FD", "0E", "D9", "0B",
+      "95", "06", "62", "03", "FF", "0F", "A9", "00"
     ],
 
 

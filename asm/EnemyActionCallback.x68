@@ -24,7 +24,7 @@
 
 ; ORG         $180C30
 
-  BSR         $180DE0                   ; Calls the code that tries to updated the targets for Fessenden 2nd form.
+  BSR         $180E00                   ; Calls the code that tries to updated the targets for Fessenden 2nd form.
   MOVE.B      #$E, ($2E, A3)            ; Code from the original game that was replaced to jump to this code.
   JMP         $108E4                    ; Jumps back to where it stopped in the original code.
 

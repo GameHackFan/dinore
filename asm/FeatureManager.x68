@@ -86,7 +86,7 @@
 ; ORG         $1801F0
 
   BSR         $180600                   ; Block of code that replaces the pallete.
-  BSR         $180580                   ; Calls color confirmation routine.
+  BSR         $180500                   ; Calls color confirmation routine.
   BSR         $180800                   ; Calls the routine that replaces the player color.
   MOVE.B      #$1, (A6)                 ; Code from the original game readjusted.
   JMP         $71E0                     ; Jumps back to where it stopped in the original code.
@@ -137,9 +137,9 @@
 
 
 
-; This module execute several routines to ensure 
-; a proper function of the new features present 
-; in this hack.
+; This module has routines that execute several 
+; other routines to ensure that the new features
+; present in this hack will work as it should.
 ;
 ; $180100:    Handle Color Select (Select Screen)
 ; $180130:    Handle Color Select (Mid Game)

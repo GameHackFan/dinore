@@ -57,7 +57,7 @@
 ; This module forces the game difficulty to be 
 ; increased following the formula (x * 2) + 71, 
 ; where "x" is the original game difficulty. It
-; also provides a routine that converts the custom
+; also provides a routine that converts the custom 
 ; difficulty back to original so it can work 
 ; properly in the service menu.
 ; 

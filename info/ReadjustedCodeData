@@ -29,7 +29,7 @@ Color Label
 
 Color Confirmation
 
-180580:   Color Confirmation
+180500:   Color Confirmation
 
 
 Color Flag
@@ -74,8 +74,10 @@ Enemy Action Callback
 Enemy Target Improvement
 
 180D00:   Enemy Target Update
-180DE0:   Fessenden 2nd Form On Clinch Target Update
-180E00:   Fessenden 1st Form Target Update Caller
+180D60:   Player Address Offset Table
+180D70:   Character ID Table (Enemy)
+180E00:   Fessenden 2nd Form On Clinch Target Update
+180E20:   Fessenden 1st Form Target Update Caller
 
 
 Title Screen Text
@@ -100,9 +102,9 @@ Play Mode Limiter
 Enemy Invulnerability Improvement
 
 181400:   Activate Enemy Invulnerability (Current Enemy)
-1814A0:   Remove Enemy Invulnerability (Butcher, Slice, Morgue, Tyrog, Fessenden 1st Form)
-1814D0:   Remove Enemy Invulnerability (Morgan)
-181500:   Add Invulnerability Compatibility When Getting Up (Current Enemy)
+1814B0:   Remove Enemy Invulnerability (Butcher, Slice, Morgue, Tyrog, Fessenden 1st Form)
+1814E0:   Remove Enemy Invulnerability (Morgan)
+181510:   Add Invulnerability Compatibility When Getting Up (Current Enemy)
 
 
 Power Indicator
@@ -121,6 +123,7 @@ Enemy Action Improvement
 
 181800:   Sets Outside Screen Flag (Slisaur)
 181840:   Force Aggressive Action When Outside Screen Flag is Active (Slisaur)
+181880:   Tyrog Try To Change To Slap Action
 
 
 Main Characters Palletes
@@ -158,16 +161,19 @@ Callers
 018A98:   Calls 1801C0
 01E6E2:   Calls 180AD0
 02AFE4:   Calls 180C00
-02B55C:   Calls 181500
-036C34:   Calls 1814A0
-04C038:   Calls 1814A0
-051890:   Calls 1814D0
-053FDA:   Calls 1814A0
-05882E:   Calls 1814A0
-067ED2:   Calls 1814A0
-067F46:   Calls 180E00
-068068:   Calls 180E00
-0682BA:   Calls 180E00
+02B55C:   Calls 181510
+036C34:   Calls 1814B0
+037D3A:   Calls 181880
+037EB0:   Calls 181880
+037F86:   Calls 181880
+04C038:   Calls 1814B0
+051890:   Calls 1814E0
+053FDA:   Calls 1814B0
+05882E:   Calls 1814B0
+067ED2:   Calls 1814B0
+067F46:   Calls 180E20
+068068:   Calls 180E20
+0682BA:   Calls 180E20
 08AB9A:   Calls 180AA0
 08BD66:   Calls 180680
 08C006:   Calls 180740
@@ -244,9 +250,19 @@ Tyrog Wake Up Action
 037416: Tyrog Wake Up Action Changed (Tries to Move, ends at 3742E)
 
 
+Tyrog Puke Pallete Fix
+
+4D6C0: Tyrog Puke Pallete Fix (01 to 03 - 81 to 83)
+
+
 Morgan Wake Up Action
 
 0527CC: Morgan Wake Up Action Changed (Tries to Move, ends at 527E4)
+
+
+Mack Keep Coming Back
+
+53766: Mack (Triceratops) Keep Coming Back After Leaving the Screen
 
 
 3rd Stage CPU Car Driver

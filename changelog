@@ -1,4 +1,14 @@
-Version v1.1:
+Version 1.2:
+- EnemyTargetImprovement code changed again, now all players have an almost equal chance of being targeted, the difference is very small (P1 = 33.11603651%, P2 = 32.33376793%, P3 = 34.55019557%).
+- Tyrog now has 32.8125% (can be more or can be less cause it uses his internal timer) chance of doing his Slap Attack instead of doing his Spine, Fire Spit, Puke Attack if his target is in the range of the Slap Attack (he could slap only when getting up, and it was removed in the 1.1 version).
+- Mack (Triceratops) now behaves similar to HOGG (Biker Boss), when he leaves the screen he doesn't despawn, he comes back going to the opposite direction and keeps repeating doing it all the time.
+- Tyrog Puke pallete ID changed from 1 to 3, now it is red again (3 was set to be Hannah's pallete in the 1.0 version).
+- Hannah's 8th Color Change (its time for Hannah to look like herself not like Mess).
+- Some small changes, more like reorganizing some code (irrelevant on gameplay).
+
+
+
+Version 1.1:
 - Improved Hannah's 2nd and 5th Color.
 - Improved Mess' 5th Color.
 - Improved Mustapha's 2nd Color.
@@ -29,7 +39,7 @@ big range was having a reasonable chance to beat slisaur slash attack, even if h
 
 
 
-Version v1.0:
+Version 1.0:
 - Added Color Select Feature, see changes A to G.
 - Change A: Jack, Hannah, Mustapha and Mess now have original + 7 extra colors.
 - Change B: The palletes 0 (Jack), 1 (Hannah), 2 (Mustapha) are now P1, P2 and P3 palletes.

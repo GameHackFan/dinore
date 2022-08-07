@@ -4,6 +4,7 @@ FFB574:   Player 3 Character Memory Region
 xxxx0C:   Air position (Height)
 xxxx08:   Ground position X
 xxxx10:   Ground position Y
+xxxx24:   Look Direction (0 look left, 1 look right)
 xxxxC6:   Current Power
 
 xxx182:   Extra Life Flag (use it to fix the immortal bug)

@@ -5,7 +5,7 @@
 * Description:  It ensures players can't pick the same color.
 *----------------------------------------------------------------------------------------------
 
-; ORG         $180580
+; ORG         $180500
 
                                         ; Block of code that fixes the color conflict.
   CLR.W       D6                        ; Clears D6, will be used as conflict mask.                                        
@@ -59,4 +59,4 @@
 ; players select the same color. It will change 
 ; to the next color in case of color conflict.
 ;
-; 180580:   Color Conflict Fix (Current Player)
+; 180500:   Color Conflict Fix (Current Player)
