@@ -71,8 +71,21 @@
 
 
 
-; This module provides routines that handle 
-; the color select.
+; ORG         $1803C0
+
+                                        ; Block of code saves the player color from D1.
+  CLR.W       D0                        ; Clears D0.
+  AND.W       #$7, D1                   ; D1 and 7, colors go from 0 to 7.
+  MOVE.B      ($2, A6), D0              ; Stores ($2 + A6) inside D0, the current player ID.
+  ADD.W       D0, D0                    ; Adds D0 to D0, doubles it because the color is 2 bytes.
+  ADD.W       #$7F00, D0                ; Adds 7F00 to D0, the color selected offset.
+  MOVE.W      D1, (A5, D0.W)            ; Stores D1 inside (A5 + D0.W), the player color ID fixed.
+  RTS                                   ; Returns back to the routine that called this code.
+
+
+
+; This module provides routines that handle the color select.
 ;
-; 180300:   Handles Color Select (Select Screen)
-; 180360:   Handles Color Select (Mid Game)
+; 180300:   Handles Color Select (Select Screen).
+; 180360:   Handles Color Select (Mid Game).
+; 1803C0:   Saves Color From D1.

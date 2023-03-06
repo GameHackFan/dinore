@@ -1,9 +1,11 @@
 FFB274:   Player 1 Character Memory Region
 FFB3F4:   Player 2 Character Memory Region
 FFB574:   Player 3 Character Memory Region
+xxxx02:   Player ID.
 xxxx0C:   Air position (Height)
 xxxx08:   Ground position X
 xxxx10:   Ground position Y
+xxxx23:   Pallete ID
 xxxx24:   Look Direction (0 look left, 1 look right)
 xxxxC6:   Current Power
 

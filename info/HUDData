@@ -1,0 +1,4 @@
+162F8:    Code that prints the whole player HUD.
+1631A:    Load the HUD addresses.
+16396:    Prints the HUD character image.
+163F4:    Prints the HUD character name.

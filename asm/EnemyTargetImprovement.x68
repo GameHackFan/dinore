@@ -12,22 +12,21 @@
   MOVE.B      ($3, A6), D0              ; Stores ($3 + A6) inside D0, the enemy ID.
   MOVE.B      ($68, PC, D0.W), D0       ; Store ($68 + PC + D0.W) inside D0, the enemy update target flag.
   TST.B       D0                        ; Compares 0 and D0.
-  BLT         $180D46                   ; If it is less than 0, go to the last line.
+  BLT         $180D42                   ; If it is less than 0, go to the RTS line.
   SWAP        D6                        ; Invert D6 higher and lower bits, lower bits might be used later.
-  MOVE.B      ($4EA, A5), D6            ; Stores ($4EA + A5) inside D6, part of the stage time.
-  BSET        #0, D6                    ; Sets the 1st bit of D6 to 1, only odd values are good.
+  MOVE.B      ($75C2, A5), D6           ; Stores ($75C2 + A5) inside D6, current frame.
   ADD.W       #$30, D6                  ; Adds 30 to D6, to ensure a maximum of 10 loops.
-  BTST        #$D, D6                   ; Test the 14th bit of D6.
-  BNE         $180D46                   ; If it is not 0, it is 2000 or more, don't change target, go to the last CLR line.
+  CMP.W       #$2000, D6                ; Compares 2000 and D6.
+  BCC         $180D3E                   ; If it is 2000 or more, don't change target, go to the last CLR line.
   MOVE.W      D6, D0                    ; Stores D6 inside D0, D0 will be modified.
   MULU.W      #$7, D0                   ; Multiples D0 by 7, some constant to change the value.
   LSR.W       #2, D0                    ; Shifts right D0 bits by 2.
   MOVE.W      D0, D6                    ; Stores D0 inside D6, to be used in the next iteration.
   AND.W       #3, D0                    ; D0 and 3, put the value in a valid range.
   ADD.B       D0, D0                    ; Adds D0 to D0, doubles it, player address is 2 bytes.
-  MOVE.W      ($2C, PC, D0.W), D0       ; Stores ($2C + PC + D0.W) inside D0, the player address.
+  MOVE.W      ($30, PC, D0.W), D0       ; Stores ($30 + PC + D0.W) inside D0, the player address.
   TST.B       (A5, D0.W)                ; Compares 0 and (A5 + D0.W), the target active flag.
-  BEQ         $180D1C                   ; If it is 0, go back to the 12th line of code.
+  BEQ         $180D18                   ; If it is 0, go back to the CMP line of code.
   ADD.W       A5, D0                    ; Adds A5 to D0, to fix the player address.
   MOVE.W      D0, ($76, A6)             ; Stores D0 inside ($76 + A6), the new target.
   CLR.W       D6                        ; Clears D6.

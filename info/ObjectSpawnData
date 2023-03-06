@@ -1,0 +1,252 @@
+Object Code:
+
+Dinosaur Egg: 17, 16, 13, 14, 15, 12, 03    (AF71C).
+
+Kiss (Ex Li): 09  (965AA)
+Pow!:         09  (9245A)
+Smack:        09
+Yeah:         09
+Ha Ha:        09
+
+Books:        83, 94, 95, 9C, 96    (946D2)
+
+Blood:        03  (127D0)
+Boom:         03  (9242C)
+Body Parts:   03  (93D68)
+[!]:          03  (9242C)   Same as Boom
+
+
+Sunglasses:   16  (24C0E)
+Knife:        16  (5139C)
+
+Zzzz:         0E, 03, 16    (96686)
+Katatata:     0E, 03, 16    (9245A)
+
+Knife Barrel: 16  (24B90) Check if D1 has 3
+
+
+Need a Hand:  16  (18C2A)   Player Respawn.
+Gonna Pay:    16  (18C2A)   Player Respawn.
+Let's Go!:    16  (6200)    Jack, Tag Team
+Jump:         16  (6200)    Hannah, Tag Team
+Let's Roll!:  16  (6200)    Mustapha, Tag Team
+Let's Fly!:   16  (6200)    Mess, Tag Team
+
+What a Wimp:  16  (619C)    Hannah, Win 1
+All Right!:   16  (619C)    Hannah, Win 2
+Damn:         16  (619C)    Jack, Win 1
+I'm Good!:    16  (619C)    Jack, Win 1
+Touch This:   16  (619C)    Jack, Win 2
+Bad Bone:     16  (619C)    Mustapha, Win 1
+Mamba Jamma:  16  (619C)    Mustapha, Win 2
+Number One:   16  (619C)    Mess, Win 1
+Too Cool:     16  (619C)    Mess, Win 2
+Look Out:     16
+[?]:          16
+
+
+1st Stage Dino:   9D            (56C94)
+Weapons:          Any Pallete   (24B90)
+
+
+
+
+Sprite Pallete Address
+
+Zzzz:           EABC4, EABCE, EABD8     (0E 00 / 000E)
+Ka Ta:          EABE2, EABEC            (0E 00 / 000E)
+[?]:            EAC02                   (16 00 / 0016)
+[!]:            EAC0C                   (16 00 / 0016)
+Sunglasses:     EB0E2                   (16 00 / 0016)
+Stage 7 Book 1: EBA34, EBA3A
+Stage 7 Book 2: EBA40, EBA46, EBA4A
+Stage 7 Book 3: EBA50, EBA56
+Boom:           EAB38, EAB3E, EAB44,    (03 xx / xx03)
+                EAB4A, EAB50, EAB56,
+                EAB5C, EAB62
+Dinosaur Egg:   EB0B4, EB0BA, EB0C0,    (17 xx / xx17)
+                EB0C6, EB0CA, EB0CE,
+                EB0D2
+Body Parts 1:   EB4CC, EB4D2
+Body Parts 2:   EB4D8, EB4DE
+Body Parts 3:   EB4E4, EB4EA
+Body Parts 4:   EB4F0, EB4F6
+Body Parts 5:   EB4FC, EB452
+Body Parts 6:   EB508, EB50E
+Body Parts 7:   EB514, EB51A, EB51E
+Body Parts 8:   EB524, EB52A, EB52E
+Body Parts 9:   EB534, EB53A
+Body Parts 10:  EB540, EB546, EB54A
+Body Parts 11:  EB550, EB556, EB55A
+Body Parts 12:  EB560, EB566
+Body Parts 13:  EB56C
+Body Parts 14:  EB576
+Body Parts 15:  EB580
+Body Parts 16:  EB58A
+Slice Knife 1:  E5AC0, E5AC4
+Slice Knife 2:  E5AE0, E5AE4
+Slice Knife 3:  E5B0C, E5B10
+Slice Knife 4:  E5B30, E5B34
+Slice Knife 5:  E5BA0, E5BA4
+Slice Knife 6:  E5BBC, E5BC0
+Slice Knife 7:  E5BE0, E5BE4
+Slice Knife 8:  E5C04, E5C08
+Slice Knife 9:  E5C24, E5C28
+Slice Knife 10: E5C40, E5C44
+Slice Knife 11: E5C60, E5C64
+Slice Knife 12: E5C80, E5C84
+Slice Knife 13: E5CAC, E5CB0
+Slice Knife 14: E5CD4, E5CD8
+Slice Knife 15: E5D00, E5D04
+Slice Knife 16: E5D58, E5D5C
+Slice Knife 17: E5D7C, E5D80
+Slice Knife 18: E5D9C, E5DA0
+Slice Knife 19: E5DC0
+Slice Knife 20: E5DDC, E5DE0
+Slice Knife 21: E5E08, E5E0C, E5E10
+Slice Knife 22: E5E34, E5E38
+Slice Knife 23: E5E64, E5E68
+Slice Knife 24: EE9AE, EE9B2
+Bludge Spit 1:  EE0AC, EE0B2                   (15 00 / 0015)
+Bludge Spit 2:  EE0B8, EE0BE, EE0C2
+Bludge Spit 3:  EE0C8, EE0CE
+Bludge Spit 4:  EE0D4, EE0DA, EE0DE
+Bludge Spit 5:  EE0E4, EE0EA
+Bludge Spit 6:  EE0F0, EE0F6
+Bludge Spit 7:  EE0FC, EE102
+Bludge Spit 8:  EE108, EE10E
+Bludge Spit 9:  EE114, EE11A
+Bludge Spit 10: EE120, EE126, EE12A, EE12E
+Bludge Spit 11: EE134, EE13A, EE13E
+Bludge Spit 12: EE144, EE14A, EE14E, EE152
+Bludge Spit 13: EE158, EE15E, EE162, EE166, EE16A, EE16E
+Bludge Spit 14: EE174, EE17A, EE17E, EE182, EE186, EE18A
+Knife 1 1:      E4716, E471C (8000, 0100)
+Knife 1 2:      E4722, E4728 (8000, 0100)
+Knife 1 3:      E472E, E4734, E4738 (8000, 0000, 0100)
+Knife 1 4:      E473E, E4744 (8000, 1000)
+Knife 1 5:      E474A, E4750 (8000, 1000)
+Knife 1 6:      E4756, E475C (8000, 1000)
+Knife 1 7:      E4762, E4768, E476C (8000, 0000, 0100)
+Knife 1 8:      E4772, E4778 (8000, 0100)
+Knife 1 9:      E477E (0000)
+Knife 1 10:     E478A (0000)
+Knife 1 11:     E4796 (0000)
+Knife 1 12:     E47A4 (0000)
+Knife 1 13:     E47B0 (0000)
+Knife 1 14:     E47BC (0000)
+Knife 1 15:     E47C8 (0000)
+Knife 1 16:     E47D6 (0000)
+Knife 1 17:     E52A2, E52A8 (8000, 0100)
+Knife 2 1:      EC442, EC448 (8000, 0160)
+Knife 2 2:      EC44E, EC454 (8000, 0160)
+Knife 2 3:      EC45A, EC460, EC464 (8000, 0060, 0160)
+Knife 2 4:      EC46A, EC470 (8000, 1060)
+Knife 2 5:      EC476, EC47C (8000, 1060)
+Knife 2 6:      EC482, EC488 (8000, 1060)
+Knife 2 7:      EC48E, EC494, EC498 (8000, 0060, 0160)
+Knife 2 8:      EC49E, EC4A4 (8000, 0160)
+Knife 2 9:      EC4AA, EC4B0, EC4B4 (8000, 0060, 0060)
+Knife 2 10:     EC4BA, EC4C0, EC4C4 (8000, 0060, 0060)
+Knife 2 11:     EC4CA, EC4D0, EC4D4, EC4D8 (8000, 0060, 0060, 0060)
+Knife 2 12:     EC4DE, EC4E4, EC4E8 (8000, 0060, 0060)
+Knife 2 13:     EC4EE, EC4F4, EC4F8 (8000, 0060, 0060)
+Knife 2 14:     EC4FE, EC504, EC508 (8000, 0060, 0060)
+Knife 2 15:     EC50E, EC514, EC518, EC51C (8000, 0060, 0060, 0060)
+Knife 2 16:     EC522, EC528, EC52C (8000, 0060, 0060)
+Need a Hand:    E3C04, E3C0A, E3C0E (8000, 0000, 0400)
+Pay For This:   E3C14, E3C1A, E3C1E (8000, 0400, 0400)
+1P Indicator 1: EAC16, EAC1C, EAC20 (8000, 0000, 0400)
+1P Indicator 2: EAC26, EAC2C, EAC30 (8000, 0000, 0400)
+1P Indicator 3: EAC36, EAC3C, EAC40 (8000, 0000, 0400)
+2P Indicator 1: EB344, EB34A, EB34C (8007, 0007, 0107)
+2P Indicator 2: EB354, EB35A, EB35C (8007, 0007, 0107)
+2P Indicator 3: EB364, EB36A, EB36C (8007, 0007, 0107)
+3P Indicator 1: EB374, EB37A, EB37C (8009, 0009, 0109)
+3P Indicator 2: EB384, EB38A, EB38C (8009, 0009, 0109)
+3P Indicator 3: EB394, EB38A, EB38C (8009, 0009, 0109)
+
+
+
+1P Indicator:   57CA, 57CD, 57DD
+2P Indicator:   57DA, 57E9, 57F7
+3P Indicator:   574D, 57FA, 57FD
+Knife Sprites:  55CE-55CF, 52E9-52EF, 52F9-52FF, 5300-530B
+Blood Sprites:  5707-0F, 5710-1F (Don't need to touch it, XD)
+
+
+
+Object Spawn Code
+
+00619C:   Player Dialogue, Stage Win.
+006200:   Player Dialogue, Tag Team.
+018C2A:   Player Dialogue, Player Spawn.
+0127D0:   Blood and Spark.
+024B90:   All Weapons Drop.
+024BD4:   All Foods Drop.
+024C0E:   All Treasures Drop.
+05139C:   Blade / Razor Knife Drop.
+05738E:   Butcher Machete Drop.
+024C8A:   Ammo Drop.
+0946D2:   Objects Breaking.
+
+
+
+
+
+
+Player Pallete Fix
+         
+
+Address:  18A94, 18B4C, 18DBA, 18D1E, 1915C, 1986C, 19A72, 1AE58
+          1AF78, 1BD78, 1C06A, 1C0DA, 1C12C, 1C1C0, 1C3A0, 1C58A
+          1C700, 1C832, 1C8C4, 1CA38, 1CDA8, 1CDD4, 1CFB4
+
+
+Found at 018A94
+Found at 018B4C
+Found at 018D1E
+Found at 018DBA
+Found at 01915C
+Found at 01986C
+Found at 019A72
+Found at 01AE58
+Found at 01AF78
+Found at 01BD78
+Found at 01C06A
+Found at 01C0DA
+Found at 01C12C
+Found at 01C1C0
+Found at 01C3A0
+Found at 01C58A
+Found at 01C700
+Found at 01C832
+Found at 01C8C4
+Found at 01CA38
+Found at 01CDA8
+Found at 01CDD4
+Found at 01CFB4
+
+
+
+// Object Pallete Fix
+
+Found at 024642           Weapon / Ground
+Found at 024724           Dynamite Ready To Explode
+Found at 024820 (247FA)   Weapon Drop / Weapon Runs Out Of Bullets
+
+Found at 024A00           Treasure
+
+Found at 02509C (25060)   Weapon Drop
+Found at 025468           Knife on Hand
+Found at 025496           Knife Throw
+
+Found at 028434           Ammo Drop
+Found at 0289EA           Food Drop
+Found at 028E5A           Bomb Barrel
+
+Found at 02A086           Treasure Drop
+Found at 02AD4A           Enemy
+Found at 02B55A (2B554)   Enemy
+
+Special 25178             Forces weapons to reset blink pallete

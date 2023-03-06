@@ -1,0 +1,35 @@
+Seed:   16807, 18749, 22571, 26573, 28559, 30727, 61673, 65539
+
+
+let a = [0, 0, 0, 0];
+let b = [0, 0, 0, 0];
+let c = [0, 0, 0, 0];
+let d = [0, 0, 0, 0, 0, 0, 0, 0];
+let e = [0, 0, 0, 0, 0, 0, 0, 0];
+let f = [0, 0, 0, 0, 0, 0, 0, 0];
+let max = 65536;
+let shift = 8;
+
+for(let i = 0; i < 65536; i ++)
+{
+  let ar = ((30727 * i) >> shift) % max;
+  let br = ((26573 * i) >> shift) % max;
+  let cr = ((18749 * i) >> shift) % max;
+  let dr = ((30727 * ar) >> shift) % max;
+  let er = ((26573 * br) >> shift) % max;
+  let fr = ((18749 * cr) >> shift) % max; 
+
+  a[ar % a.length]++;
+  b[br % b.length]++;
+  c[cr % c.length]++;
+  
+  d[dr % d.length]++;
+  e[er % e.length]++;
+  f[fr % f.length]++;
+}
+
+let s = a + "\n" + b + "\n" + c + "\n\n\n";
+s += d + "\n" + e + "\n" + f;
+alert(s);
+
+

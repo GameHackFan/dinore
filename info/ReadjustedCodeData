@@ -2,7 +2,7 @@
 Extra Code
 ------------------------------------------------------------------------
 
-Color Select Manager
+Feature Manager
 
 180100:   Color Select Caller (Select Screen)
 180130:   Color Select Caller (Mid Game)
@@ -19,6 +19,7 @@ Color Select
 
 180300:   Color Select (Select Screen)
 180360:   Color Select (Mid Game)
+1803C0:   Saves Color From D1.
 
 
 Color Label
@@ -27,34 +28,28 @@ Color Label
 180440:   Color Label (Mid Game)
 
 
-Color Confirmation
-
-180500:   Color Confirmation
-
-
 Color Flag
 
-180600:   Color Flag Activate
-180630:   Color Flag Clear
-180660:   Car Color Flag Clear
-180680:   Player Car Seat Activate
-180700:   Car Color Flag Activate
-180740:   Inside Car Flag Activate
-180780:   Car Color Flags Clear Caller
+180500:   Color Conflict and Character Flags (Current Player)
+1805B0:   Clear All Players Character Flags.
+1805D0:   Set Player Pallete ID Inside the Car.
+180600:   Set Player Driver Pallete ID to CPU Driver.
+180620:   Saves Seat Pallete ID.
+
+
+Player Character Randomizer
+
+180700:   Sets the Randomizer Flag.
+180730:   Randomizes a Number in D1, D6.
+180760:   Sets Random Character (Current Player).
+180780:   Randomizes a Character and Color (Current Player).
+1807B0:   Randomizes a Character and Color (All Players).
 
 
 Player Pallete Replace
 
 180800:   Player Pallete Replace (Current Player)
 180860:   Player Pallete Replace (All Players)
-
-
-Pallete Mapper
-
-180900:   Save Custom Pallete ID
-180950:   Pallete Mapper
-1809A0:   Save Custom Pallete ID Caller (Default)
-1809C0:   Save Custom Pallete ID Caller (Special Cases)
 
 
 Idle Screen Pallete Fix
@@ -126,40 +121,58 @@ Enemy Action Improvement
 181880:   Tyrog Try To Change To Slap Action
 
 
-Main Characters Palletes
+Game Utils
 
-1A0000:   Jack Palletes
-1A0100:   Mustapha Palletes
-1A0200:   Hannah Palletes
-1A0300:   Mess Palletes
+181A00:   Saves Current Time in Frames in D6.
+181A30:   Saves D0, D1, D6, A0, A1, A6 in RAM at FFFFE0.
+181A60:   Restores D0, D1, D6, A0, A1, A6 from RAM at FFFFE0.
+181A90:   Saves Stage ID and Area ID inside D6.
+
+
+Player Pallete Fix
+
+181B00:   Force Custom Pallete ID 1 (Current Player)
+181B30:   Force Custom Pallete ID 2 (Current Player)
+181B60:   Force Pallete ID 16
+181B80:   Force Custom Pallete ID 3 (Current Player)
+
+
+Object Pallete Improvement
+
+181C00:   Force Custom Pallete ID 1 (Object Spawn)
+181C60:   Force Custom Pallete ID 2 (Object Spawn)
+181C90:   Force Custom Pallete ID 3 (Object Spawn)
+181CB0:   Force Custom Pallete ID 4 (Object Spawn)
+181CD0:   Force Custom Pallete ID 5 (Object Spawn)
+181D00:   Force Custom Pallete ID 6 (Object Spawn)
+181D40:   Force Custom Pallete ID 7 (Object Spawn)
+
 
 ------------------------------------------------------------------------
 Callers
 ------------------------------------------------------------------------
 
+00619C:   Calls 181B60
+006200:   Calls 181B60
+0065AE:   Calls 181CD0
 007174:   Calls 180130
 0071DA:   Calls 1801F0
 007494:   Calls 181200
 008942:   Calls 180190
 008A4E:   Calls 180160
 00B274:   Calls 180100
+00FE42:   Calls 181C00
 0108DE:   Calls 180C30
-014054:   Calls 1809A0
-014122:   Calls 1809C0
-01433E:   Calls 180950
-014390:   Calls 180950
-014436:   Calls 180950
-014488:   Calls 180950
-01450A:   Calls 180950
-0145C6:   Calls 180950
-0146CA:   Calls 180950
-014786:   Calls 180950
-014C2E:   Calls 180950
-014C90:   Calls 180950
 0151FE:   Calls 180AA0
 016456:   Calls 180220
-018A98:   Calls 1801C0
+018A94:   Calls 1801C0
+01CDA0:   Calls 181B00
+01CDD4:   Calls 181B30
 01E6E2:   Calls 180AD0
+024B90:   Calls 181C90
+024BD4:   Calls 181CD0
+024C0E:   Calls 181CB0
+024C8A:   Calls 181C60
 02AFE4:   Calls 180C00
 02B55C:   Calls 181510
 036C34:   Calls 1814B0
@@ -167,25 +180,31 @@ Callers
 037EB0:   Calls 181880
 037F86:   Calls 181880
 04C038:   Calls 1814B0
+05139C:   Calls 181CD0
 051890:   Calls 1814E0
 053FDA:   Calls 1814B0
+055A4C:   Calls 181CD0
+05738E:   Calls 181CD0
 05882E:   Calls 1814B0
+05BFAC:   Calls 181CD0
 067ED2:   Calls 1814B0
 067F46:   Calls 180E20
 068068:   Calls 180E20
 0682BA:   Calls 180E20
 08AB9A:   Calls 180AA0
-08BD66:   Calls 180680
-08C006:   Calls 180740
-08C836:   Calls 180780
-096FDE:   Calls 180700
+08BD66:   Calls 180620
+09377A:   Calls 181CD0
+096FDE:   Calls 1805D0
+0971E0:   Calls 180600
+097656:   Calls 181D40
 09A54E:   Calls 1810A0
 09A572:   Calls 1810C0
 09A828:   Calls 180AA0
 09D6FA:   Calls 1810E0
 0A848C:   Calls 1810E0
 0AC9B0:   Calls 181760
-0ACAA0:   Calls 180250
+0ACAA8:   Calls 180250
+
 
 ------------------------------------------------------------------------
 Other Changes
@@ -237,6 +256,52 @@ Extra Life Immortal Bug Fix
 018E62: Extra Life Immortal Bug Fix
 
 
+Player Pallete Fix
+
+
+018B4C: Player Pallete Fix 1
+018D18: Player Pallete Fix 2
+018D9A: Player Pallete Fix 3
+019150: Player Pallete Fix 4
+01986C: Player Pallete Fix 5
+019A4C: Player Pallete Branch Fix 1
+019A6C: Player Pallete Fix 6
+01AE32: Player Pallete Branch Fix 2
+01AE52: Player Pallete Fix 7
+01AF52: Player Pallete Branch Fix 3
+01AF72: Player Pallete Fix 8
+01BD78: Player Pallete Fix 9
+01C066: Player Pallete Fix 10
+01C0DA: Player Pallete Fix 11
+01C128: Player Pallete Fix 12
+01C1C0: Player Pallete Fix 13
+01C3A0: Player Pallete Fix 14
+01C58A: Player Pallete Fix 15
+01C700: Player Pallete Fix 16
+01C814: Player Pallete Fix 17
+01C8C4: Player Pallete Fix 18
+01CA38: Player Pallete Fix 19
+01CFB4: Player Pallete Fix 20
+
+
+Object Pallete Fix / Improvement
+
+024642: Object Pallete Fix 1
+024724: Object Pallete Fix 2
+02480E: Object Pallete Fix 3
+024A00: Object Pallete Fix 4
+02509C: Object Pallete Fix 5
+025178: Weapon Blink Pallete Fix
+025468: Object Pallete Fix 6
+025496: Object Pallete Fix 7
+028434: Object Pallete Fix 8
+0289EA: Object Pallete Fix 9
+028E5A: Object Pallete Fix 10
+02A086: Object Pallete Fix 11
+02AD42: Object Pallete Fix 12
+02B55A: Object Pallete Fix 13
+
+
 Weapon Bullets
 
 024D9E: Rifle Starting Bullets
@@ -267,7 +332,7 @@ Mack Keep Coming Back
 
 3rd Stage CPU Car Driver
 
-08C7B0: Hannah Car Driver.
+8C7B0: Force Mess As CPU Driver.
 
 
 Punch + Jump Attack Damage Given
@@ -293,5 +358,266 @@ Play Mode
 
 Palletes
 
-0B7AB2: Mess Pallete Changed to Hannah
+0B7AB2: Mess Pallete Changed to Custom Hannah Pallete
 0B7D12: Razor New Pallete
+
+
+Sprite Pallete Fix
+
+0E3C04: Need a Hand Speech Balloon Pallete Fix 1
+0E3C0A: Need a Hand Speech Balloon Pallete Fix 2
+0E3C0E: Need a Hand Speech Balloon Pallete Fix 3
+0E3C14: They're Gonna Pay For This Speech Balloon Pallete Fix 1
+0E3C1A: They're Gonna Pay For This Speech Balloon Pallete Fix 2
+0E3C1E: They're Gonna Pay For This Speech Balloon Pallete Fix 3
+0E4716: Type 1 Knife 1 Pallete Fix 1
+0E471C: Type 1 Knife 1 Pallete Fix 2
+0E4722: Type 1 Knife 2 Pallete Fix 1
+0E4728: Type 1 Knife 2 Pallete Fix 2
+0E472E: Type 1 Knife 3 Pallete Fix 1
+0E4734: Type 1 Knife 3 Pallete Fix 2
+0E4738: Type 1 Knife 3 Pallete Fix 3
+0E473E: Type 1 Knife 4 Pallete Fix 1
+0E4744: Type 1 Knife 4 Pallete Fix 2
+0E474A: Type 1 Knife 5 Pallete Fix 1
+0E4750: Type 1 Knife 5 Pallete Fix 2
+0E4756: Type 1 Knife 6 Pallete Fix 1
+0E475C: Type 1 Knife 6 Pallete Fix 2
+0E4762: Type 1 Knife 7 Pallete Fix 1
+0E4768: Type 1 Knife 7 Pallete Fix 2
+0E476C: Type 1 Knife 7 Pallete Fix 3
+0E4772: Type 1 Knife 8 Pallete Fix 1
+0E4778: Type 1 Knife 8 Pallete Fix 2
+0E477E: Type 1 Knife 9 Pallete Fix
+0E478A: Type 1 Knife 10 Pallete Fix
+0E4796: Type 1 Knife 11 Pallete Fix
+0E47A4: Type 1 Knife 12 Pallete Fix
+0E47B0: Type 1 Knife 13 Pallete Fix
+0E47BC: Type 1 Knife 14 Pallete Fix
+0E47C8: Type 1 Knife 15 Pallete Fix
+0E47D6: Type 1 Knife 16 Pallete Fix
+0E52A2: Type 1 Knife 17 Pallete Fix 1
+0E52A8: Type 1 Knife 17 Pallete Fix 2
+0E5AC0: Slice Boomerang 1 Pallete Fix 1
+0E5AC4: Slice Boomerang 1 Pallete Fix 2
+0E5AE0: Slice Boomerang 2 Pallete Fix 1
+0E5AE4: Slice Boomerang 2 Pallete Fix 2
+0E5B0C: Slice Boomerang 3 Pallete Fix 1
+0E5B10: Slice Boomerang 3 Pallete Fix 2
+0E5B30: Slice Boomerang 4 Pallete Fix 1
+0E5B34: Slice Boomerang 4 Pallete Fix 2
+0E5BA0: Slice Boomerang 5 Pallete Fix 1
+0E5BA4: Slice Boomerang 5 Pallete Fix 2
+0E5BBC: Slice Boomerang 6 Pallete Fix 1
+0E5BC0: Slice Boomerang 6 Pallete Fix 2
+0E5BE0: Slice Boomerang 7 Pallete Fix 1
+0E5BE4: Slice Boomerang 7 Pallete Fix 2
+0E5C04: Slice Boomerang 8 Pallete Fix 1
+0E5C08: Slice Boomerang 8 Pallete Fix 2
+0E5C24: Slice Boomerang 9 Pallete Fix 1
+0E5C28: Slice Boomerang 9 Pallete Fix 2
+0E5C40: Slice Boomerang 10 Pallete Fix 1
+0E5C44: Slice Boomerang 10 Pallete Fix 2
+0E5C60: Slice Boomerang 11 Pallete Fix 1
+0E5C64: Slice Boomerang 11 Pallete Fix 2
+0E5C80: Slice Boomerang 12 Pallete Fix 1
+0E5C84: Slice Boomerang 12 Pallete Fix 2
+0E5CAC: Slice Boomerang 13 Pallete Fix 1
+0E5CB0: Slice Boomerang 13 Pallete Fix 2
+0E5CD4: Slice Boomerang 14 Pallete Fix 1
+0E5CD8: Slice Boomerang 14 Pallete Fix 2
+0E5D00: Slice Boomerang 15 Pallete Fix 1
+0E5D04: Slice Boomerang 15 Pallete Fix 2
+0E5D58: Slice Boomerang 16 Pallete Fix 1
+0E5D5C: Slice Boomerang 16 Pallete Fix 2
+0E5D7C: Slice Boomerang 17 Pallete Fix 1
+0E5D80: Slice Boomerang 17 Pallete Fix 2
+0E5D9C: Slice Boomerang 18 Pallete Fix 1
+0E5DA0: Slice Boomerang 18 Pallete Fix 2
+0E5DC0: Slice Boomerang 19 Pallete Fix 1
+0E5DDC: Slice Boomerang 20 Pallete Fix 1
+0E5DE0: Slice Boomerang 20 Pallete Fix 2
+0E5E08: Slice Boomerang 21 Pallete Fix 1
+0E5E0C: Slice Boomerang 21 Pallete Fix 2
+0E5E10: Slice Boomerang 21 Pallete Fix 3
+0E5E34: Slice Boomerang 22 Pallete Fix 1
+0E5E38: Slice Boomerang 22 Pallete Fix 2
+0E5E64: Slice Boomerang 23 Pallete Fix 1
+0E5E68: Slice Boomerang 23 Pallete Fix 2
+0EE9AE: Slice Boomerang 24 Pallete Fix 1
+0EE9B2: Slice Boomerang 24 Pallete Fix 2
+0EAB38: Boom Label Pallete Fix 1
+0EAB3E: Boom Label Pallete Fix 2
+0EAB44: Boom Label Pallete Fix 3
+0EAB4A: Boom Label Pallete Fix 4
+0EAB50: Boom Label Pallete Fix 5
+0EAB56: Boom Label Pallete Fix 6
+0EAB5C: Boom Label Pallete Fix 7
+0EAB62: Boom Label Pallete Fix 8
+0EABC4: Dinosaur Sleeping "Zzzz" Pallete Fix 1
+0EABCE: Dinosaur Sleeping "Zzzz" Pallete Fix 2
+0EABD8: Dinosaur Sleeping "Zzzz" Pallete Fix 3
+0EABE2: M16 / Uzi "Ta" Pallete Fix
+0EABEC: M16 / Uzi "Ka" Pallete Fix
+0EAC02: Dialogue "Question" Pallete Fix
+0EAC0C: Dialogue "Exclamation" Pallete Fix
+0EAC16: Player Indicator 1P 1 Fix 1
+0EAC1C: Player Indicator 1P 1 Fix 2
+0EAC20: Player Indicator 1P 1 Fix 3
+0EAC26: Player Indicator 1P 2 Fix 1
+0EAC2C: Player Indicator 1P 2 Fix 2
+0EAC30: Player Indicator 1P 2 Fix 3
+0EAC36: Player Indicator 1P 3 Fix 1
+0EAC3C: Player Indicator 1P 3 Fix 2
+0EAC40: Player Indicator 1P 3 Fix 3
+0EB0B4: Baby Dinosaur and Egg Pallete Fix 1
+0EB0BA: Baby Dinosaur and Egg Pallete Fix 2
+0EB0C0: Baby Dinosaur and Egg Pallete Fix 3
+0EB0C6: Baby Dinosaur and Egg Pallete Fix 4
+0EB0CA: Baby Dinosaur and Egg Pallete Fix 5
+0EB0CE: Baby Dinosaur and Egg Pallete Fix 6
+0EB0D2: Baby Dinosaur and Egg Pallete Fix 7
+0EB0E2: Sunglassess Pallete Fix
+0EB344: Player Indicator 2P 1 Fix 1
+0EB34A: Player Indicator 2P 1 Fix 2
+0EB34E: Player Indicator 2P 1 Fix 3
+0EB354: Player Indicator 2P 2 Fix 1
+0EB35A: Player Indicator 2P 2 Fix 2
+0EB35E: Player Indicator 2P 2 Fix 3
+0EB364: Player Indicator 2P 3 Fix 1
+0EB36A: Player Indicator 2P 3 Fix 2
+0EB36E: Player Indicator 2P 3 Fix 3
+0EB4CC: Body Parts 1 Pallete Fix 1
+0EB4D2: Body Parts 1 Pallete Fix 2
+0EB4D8: Body Parts 2 Pallete Fix 1
+0EB4DE: Body Parts 2 Pallete Fix 2
+0EB4E4: Body Parts 3 Pallete Fix 1
+0EB4EA: Body Parts 3 Pallete Fix 2
+0EB4F0: Body Parts 4 Pallete Fix 1
+0EB4F6: Body Parts 4 Pallete Fix 2
+0EB4FC: Body Parts 5 Pallete Fix 1
+0EB452: Body Parts 5 Pallete Fix 2
+0EB508: Body Parts 6 Pallete Fix 1
+0EB50E: Body Parts 6 Pallete Fix 2
+0EB514: Body Parts 7 Pallete Fix 1
+0EB51A: Body Parts 7 Pallete Fix 2
+0EB51E: Body Parts 7 Pallete Fix 3
+0EB524: Body Parts 8 Pallete Fix 1
+0EB52A: Body Parts 8 Pallete Fix 2
+0EB52E: Body Parts 8 Pallete Fix 3
+0EB534: Body Parts 9 Pallete Fix 1
+0EB53A: Body Parts 9 Pallete Fix 2
+0EB540: Body Parts 10 Pallete Fix 1
+0EB546: Body Parts 10 Pallete Fix 2
+0EB54A: Body Parts 10 Pallete Fix 3
+0EB550: Body Parts 11 Pallete Fix 1
+0EB556: Body Parts 11 Pallete Fix 2
+0EB55A: Body Parts 11 Pallete Fix 3
+0EB560: Body Parts 12 Pallete Fix 1
+0EB566: Body Parts 12 Pallete Fix 2
+0EB56C: Body Parts 13 Pallete Fix 1
+0EB576: Body Parts 14 Pallete Fix 1
+0EB580: Body Parts 15 Pallete Fix 1
+0EB58A: Body Parts 16 Pallete Fix 1
+0EBA34: 7th Stage Library Book 1 Pallete Fix 1
+0EBA3A: 7th Stage Library Book 1 Pallete Fix 2
+0EBA40: 7th Stage Library Book 2 Pallete Fix 1
+0EBA46: 7th Stage Library Book 2 Pallete Fix 2
+0EBA4A: 7th Stage Library Book 2 Pallete Fix 3
+0EBA50: 7th Stage Library Book 3 Pallete Fix 1
+0EBA56: 7th Stage Library Book 3 Pallete Fix 2
+0EC442: Type 2 Knife 1 Pallete Fix 1
+0EC448: Type 2 Knife 1 Pallete Fix 2
+0EC44E: Type 2 Knife 2 Pallete Fix 1
+0EC454: Type 2 Knife 2 Pallete Fix 2
+0EC45A: Type 2 Knife 3 Pallete Fix 1
+0EC460: Type 2 Knife 3 Pallete Fix 2
+0EC464: Type 2 Knife 3 Pallete Fix 3
+0EC46A: Type 2 Knife 4 Pallete Fix 1
+0EC470: Type 2 Knife 4 Pallete Fix 2
+0EC476: Type 2 Knife 5 Pallete Fix 1
+0EC47C: Type 2 Knife 5 Pallete Fix 2
+0EC482: Type 2 Knife 6 Pallete Fix 1
+0EC488: Type 2 Knife 6 Pallete Fix 2
+0EC48E: Type 2 Knife 7 Pallete Fix 1
+0EC494: Type 2 Knife 7 Pallete Fix 2
+0EC498: Type 2 Knife 7 Pallete Fix 3
+0EC49E: Type 2 Knife 8 Pallete Fix 1
+0EC4A4: Type 2 Knife 8 Pallete Fix 2
+0EC4AA: Type 2 Knife 9 Pallete Fix 1
+0EC4B0: Type 2 Knife 9 Pallete Fix 2
+0EC4B4: Type 2 Knife 9 Pallete Fix 3
+0EC4BA: Type 2 Knife 10 Pallete Fix 1
+0EC4C0: Type 2 Knife 10 Pallete Fix 2
+0EC4C4: Type 2 Knife 10 Pallete Fix 3
+0EC4CA: Type 2 Knife 11 Pallete Fix 1
+0EC4D0: Type 2 Knife 11 Pallete Fix 2
+0EC4D4: Type 2 Knife 11 Pallete Fix 3
+0EC4D8: Type 2 Knife 11 Pallete Fix 4
+0EC4DE: Type 2 Knife 12 Pallete Fix 1
+0EC4E4: Type 2 Knife 12 Pallete Fix 2
+0EC4E8: Type 2 Knife 12 Pallete Fix 3
+0EC4EE: Type 2 Knife 13 Pallete Fix 1
+0EC4F4: Type 2 Knife 13 Pallete Fix 2
+0EC4F8: Type 2 Knife 13 Pallete Fix 3
+0EC4FE: Type 2 Knife 14 Pallete Fix 1
+0EC504: Type 2 Knife 14 Pallete Fix 2
+0EC508: Type 2 Knife 14 Pallete Fix 3
+0EC50E: Type 2 Knife 15 Pallete Fix 1
+0EC514: Type 2 Knife 15 Pallete Fix 2
+0EC518: Type 2 Knife 15 Pallete Fix 3
+0EC51C: Type 2 Knife 15 Pallete Fix 4
+0EC522: Type 2 Knife 16 Pallete Fix 1
+0EC528: Type 2 Knife 16 Pallete Fix 2
+0EC52C: Type 2 Knife 16 Pallete Fix 3
+0EE0AC: Bludge Spit 1 Pallete Fix 1
+0EE0B2: Bludge Spit 1 Pallete Fix 2
+0EE0B8: Bludge Spit 2 Pallete Fix 1
+0EE0BE: Bludge Spit 2 Pallete Fix 2
+0EE0C2: Bludge Spit 2 Pallete Fix 3
+0EE0C8: Bludge Spit 3 Pallete Fix 1
+0EE0CE: Bludge Spit 3 Pallete Fix 2
+0EE0D4: Bludge Spit 4 Pallete Fix 1
+0EE0DA: Bludge Spit 4 Pallete Fix 2
+0EE0DE: Bludge Spit 4 Pallete Fix 3
+0EE0E4: Bludge Spit 5 Pallete Fix 1
+0EE0EA: Bludge Spit 5 Pallete Fix 2
+0EE0F0: Bludge Spit 6 Pallete Fix 1
+0EE0F6: Bludge Spit 6 Pallete Fix 2
+0EE0FC: Bludge Spit 7 Pallete Fix 1
+0EE102: Bludge Spit 7 Pallete Fix 2
+0EE108: Bludge Spit 8 Pallete Fix 1
+0EE10E: Bludge Spit 8 Pallete Fix 2
+0EE114: Bludge Spit 9 Pallete Fix 1
+0EE11A: Bludge Spit 9 Pallete Fix 2
+0EE120: Bludge Spit 10 Pallete Fix 1
+0EE126: Bludge Spit 10 Pallete Fix 2
+0EE12A: Bludge Spit 10 Pallete Fix 3
+0EE12E: Bludge Spit 10 Pallete Fix 4
+0EE134: Bludge Spit 11 Pallete Fix 1
+0EE13A: Bludge Spit 11 Pallete Fix 2
+0EE13E: Bludge Spit 11 Pallete Fix 3
+0EE144: Bludge Spit 12 Pallete Fix 1
+0EE14A: Bludge Spit 12 Pallete Fix 2
+0EE14E: Bludge Spit 12 Pallete Fix 3
+0EE152: Bludge Spit 12 Pallete Fix 4
+0EE158: Bludge Spit 13 Pallete Fix 1
+0EE15E: Bludge Spit 13 Pallete Fix 2
+0EE162: Bludge Spit 13 Pallete Fix 3
+0EE166: Bludge Spit 13 Pallete Fix 4
+0EE16A: Bludge Spit 13 Pallete Fix 5
+0EE16E: Bludge Spit 13 Pallete Fix 6
+0EE174: Bludge Spit 14 Pallete Fix 1
+0EE17A: Bludge Spit 14 Pallete Fix 2
+0EE17E: Bludge Spit 14 Pallete Fix 3
+0EE182: Bludge Spit 14 Pallete Fix 4
+0EE186: Bludge Spit 14 Pallete Fix 5
+0EE18A: Bludge Spit 14 Pallete Fix 6
+
+
+Main Characters Palletes
+
+1A0000:   Jack Palletes
+1A0100:   Mustapha Palletes
+1A0200:   Hannah Palletes
+1A0300:   Mess Palletes

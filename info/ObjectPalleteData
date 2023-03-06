@@ -1,0 +1,78 @@
+Rifle (01):         05, 06
+Revolver (02):      05, 06
+Knife (03):         15, 16 (not solid 12, 13, 14, 17, 18)
+Uzi (04):           05, 06, 08, 09 (not solid 0C, 19, 1D)
+M16 (05):           05, 06, 08, 09 (not solid 0C, 19, 1D)
+Shotgun (06):       05, 06
+Bazooka (07):       05, 06, 08, 09 (not solid 0C, 1D, 19)
+Rod (08):           03, 05, 06
+Stick (09):         03, 05, 06
+B. Machete (0A):    1E
+Club (0B):          03, 05, 06
+Torch (0C):         03, 05, 06
+Dynamite (0D):      03, 05, 06
+Grenade (0E):       05, 06, 08, 09 (not solid 0C, 1D, 19)
+Stone (0F):         08, 09 (not solid 0C, 1B, 1D, 1F)
+
+
+Gold Bars (00):     03, 05 (1B)
+Diamond (01):       05, 06, 08, 09 (not solid 0C, 1B, 1D, 1F, 19)
+The Cup (02):       03, 05 (1B)
+Dinosaur Egg (03):  15, 16
+Gold Dust (04):     03, 05
+Dino Bone (05):     08, 09 (not solid 0C, 1D)
+Ammonite (06):      08, 09 (not solid 0C, 1D)
+Pearl (07):         07, 0F, 10 (not solid 11)
+Necklace (08):      07
+Ring (09):          07
+Watch (0A):         05, 06
+Radio (0B):         05, 06
+Coin / Dime (0C):   08, 09 (not solid 0C)
+Cash / 1000$ (0D):  05, 06, 08, 09 (not solid 0C, 19)
+Sunglasses (0E):    03, 15, 16
+Glove (0F):         08, 09 (not solid 0C)
+Note / Unused (10): 05, 06, 08, 09 (not solid 0C, 1B, 1D, 19)
+
+Ammo:               05, 06
+
+
+Barbecue (00):      05
+Steak (01):         07
+Lobster (02):       07
+Sushi (03):         07
+Hamburguer (04):    07
+Hotdog (05):        07
+Pizza (06):         07
+Salad (07):         07
+Cake (08):          07
+Ice Cream (09):     07
+Pudding (0A):       07
+Potato (0B):        07
+Gum (0C):           07 (not solid 0C)       
+Chocolate (0D):     07
+Donut (0E):         05, 06
+Coffee (0F):        07 (not solid 0C)        
+Crossant (10):      05
+
+
+Barrels Spawn (Byte 0B)
+
+Small Barrel (00):  05
+Metal Barrel (02):  05
+Wooden Barrel (04): 08, 09, 0B, 1C
+Gray Stone (06):    05, 06, 08, 09
+Brown Stone (08):   08, 09
+Golden Statue (0A): 08, 09, 1C
+Tires (0C):         06
+
+
+Rolling Barrels (Byte 0B)
+
+Small Barrel (00):  05
+Wooden Barrel (01): 08, 09, 0B, 1C
+
+
+
+Palletes To Test:     04, 0A, 0B, 0D, 0E, 1A, 1C, 1E
+Reliable Palletes:    03, 05, 06, 07, 08, 09, 0F, 10, 15, 16, 
+Unreliable Palletes:  00, 01, 02, 0C, 11, 12, 13, 14, 17, 18, 19, 1B, 1D, 1F

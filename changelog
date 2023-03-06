@@ -1,7 +1,31 @@
+Version 1.3:
+- Changed the way the game handles custom pallete, see changes A to F.
+- Change A: The custom palletes are now being handled with internal game flag to handle colors.
+- Change B: Due to the change, some objects needed to have their pallete data changed.
+- Change C: Zzzz and Ka Ta label pallete ID changed from 2 to E (pallete ID 2 is player 3 pallete).
+- Change D: Interrogation and Exclamation Speech Ballons pallete ID changed to 16.
+- Change E: The books at the library (7th Stage) are now using pallete 3, 14 and 1C.
+- Change F: The knife and Slice boomerang pallete ID changed from 0 to 16.
+- Change G: Boom label and Body parts pallete ID changed from 1 to 3.
+- Change H: Dinosaur Egg pallete ID changed from 2 to 17.
+- Change I: Player Speech Ballons are forced to use pallete 16 when they spawn.
+- Change J: Bludge's puke pallete ID changed from 2 to 15 (pallete ID 2 is player 3 pallete).
+- Change K: All Player Speech Balloons are now forced via code to use pallete 16.
+- Change L: Player indicator 1P pallete ID changed from 0 to 3.
+- Change M: Player indicator 2P pallete ID changed from 7 to E.
+- Change N: That messy PalleteMapper is now gone (thank you for what you've done, good bye).
+- Change O: Item Drops can spawn with different palletes, based on the current frame.
+- Fixed a bug with Fessenden 1st Form targeting code that could cause the game to freeze.
+- Fixed a bug where players could get wrong color on 3rd stage after getting the car.
+- Forced Mess to be the CPU car driver (He matches almost every player pallete, if not all).
+- Mess 8th color is now changed (it is time for mess to look like himself instead of like Hannah).
+- Added a Player Character Randomizer. Select pressing the start button and the character will change for every new area.
+
+
 Version 1.2:
 - EnemyTargetImprovement code changed again, now all players have an almost equal chance of being targeted, the difference is very small (P1 = 33.11603651%, P2 = 32.33376793%, P3 = 34.55019557%).
 - Tyrog now has 32.8125% (can be more or can be less cause it uses his internal timer) chance of doing his Slap Attack instead of doing his Spine, Fire Spit, Puke Attack if his target is in the range of the Slap Attack (he could slap only when getting up, and it was removed in the 1.1 version).
-- Mack (Triceratops) now behaves similar to HOGG (Biker Boss), when he leaves the screen he doesn't despawn, he comes back going to the opposite direction and keeps repeating doing it all the time.
+- Mack (Triceratops) now behaves similar to HOGG (Biker Boss), when he leaves the screen he doesn't despawn, he comes back going to the opposite direction and keeps repeating, doing it all the time.
 - Tyrog Puke pallete ID changed from 1 to 3, now it is red again (3 was set to be Hannah's pallete in the 1.0 version).
 - Hannah's 8th Color Change (its time for Hannah to look like herself not like Mess).
 - Some small changes, more like reorganizing some code (irrelevant on gameplay).

@@ -23,10 +23,7 @@
 ; ORG         $181030
 
                                         ; Block of code that prints the hack name and version in the screen.
-  MOVE.L      D0, ($7FE0, A5)           ; Stores D0 inside ($7FE0 + A5), saves it for safety.
-  MOVE.L      D1, ($7FE4, A5)           ; Stores D1 inside ($7FE4 + A5), saves it for safety.
-  MOVE.L      A0, ($7FE8, A5)           ; Stores A0 inside ($7FE8 + A5), saves it for safety.
-  MOVE.L      A1, ($7FEC, A5)           ; Stores A1 inside ($7FEC + A5), saves it for safety.
+  BSR         $181A30                   ; Calls the routine that saves some registers values.
   MOVE.W      #$1E, D1                  ; Stores 1E inside D1, the pallete id of the text.
   LEA         $181100, A1               ; Stores $181100 inside A1, The text address.
   LEA         $90A440, A0               ; Stores $90A440 inside A0, The screen region of the text.
@@ -34,10 +31,7 @@
   LEA         $181130, A1               ; Stores $181130 inside A1, The text address.
   LEA         $90A2C4, A0               ; Stores $90A2C4 inside A0, The screen region of the text.
   BSR         $181000                   ; Calls the routine that prints stuff in the screen.
-  MOVE.L      ($7FE0, A5), D0           ; Stores ($7FE0 + A5) + D0 inside, restore the value.
-  MOVE.L      ($7FE4, A5), D1           ; Stores ($7FE4 + A5) + D1 inside, restore the value.
-  MOVE.L      ($7FE8, A5), A0           ; Stores ($7FE8 + A5) + A0 inside, restore the value.
-  MOVE.L      ($7FEC, A5), A1           ; Stores ($7FEC + A5) + A1 inside, restore the value.
+  BSR         $181A60                   ; Calls the routine that retore some registers values.
   RTS                                   ; Returns back to the routine that called this code.
 
 
@@ -86,7 +80,7 @@
 ;
 ; $181100:    Hack Name and Version Text
 ;             Add the text bytes bellow.
-; 65 52 64 61 75 6A 74 73 64 65 76 20 2E 31 20 30
+; 65 52 64 61 75 6A 74 73 64 65 76 20 2E 31 20 33
 ; 62 28 20 79 61 47 65 6D 61 48 6B 63 61 46 29 6E
 ;
 ; $181130:    Project Link Text

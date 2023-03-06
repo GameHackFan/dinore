@@ -1,0 +1,7 @@
+?? ??   NN NN   PD PD   ?? ??   (SI SI    PD PD) * N
+
+
+PD:   Pallete and Sprite Data
+SI:   Sprite ID / Address.
+NN:   The amount of times of the N at the end.
+(PD PD    SI SI) * N can repeat N times.

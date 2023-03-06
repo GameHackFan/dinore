@@ -14,8 +14,6 @@
                                         ; Block of code that handles color select for select screen.
   BSR         $180300                   ; Calls the routine that reads the player input.
   BSR         $180400                   ; Calls the routine that prints the color label.
-
-                                        ; Block of code that executes the replaced code and go back.
   JSR         $B2A0                     ; Code from the original game that was replaced to jump to this code.
   JSR         $B36A                     ; Code from the original game that was replaced to jump to this code.
   JMP         $B27C                     ; Jumps back to where it stopped in the original code.
@@ -34,8 +32,6 @@
                                         ; Block of code that handles color select mid game.
   BSR         $180360                   ; Calls the routine that reads the player input.
   BSR         $180440                   ; Calls the routine that prints the character label.
-
-                                        ; Block of code that executes the replaced code and go back.
   MOVE.B      #$10, D0                  ; Code from the original game that was replaced to jump to this code.
   TST.B       ($4CF, A5)                ; Code from the original game that was replaced to jump to this code.
   BEQ         $180146                   ; Code from the original game readjusted.
@@ -49,10 +45,10 @@
 
 ; ORG         $180160
 
-                                        ; Block of code that replaces all palletes.
+                                        ; Block of code that replaces all palletes and randomizes characters.
   JSR         $8A8E                     ; Code from the original game readjusted.
   JSR         $8AAE                     ; Code from the original game readjusted.
-  BSR         $180630                   ; Calls the routine that clears the car flags.
+  BSR         $1807B0                   ; Calls the routine that randomizes all players characters.
   BSR         $180860                   ; Calls the routine that replaces the pallete of all players.
   JMP         $8A56                     ; Jumps back to where it stopped in the original code.
 
@@ -62,22 +58,29 @@
 
 ; ORG         $180190
 
-                                        ; Block of code that replaces all palletes.
-  BSR         $180630                   ; Calls the routine that clears the car flags.
+                                        ; Block of code that replaces all palletes and randomizes characters.
+  BSR         $1807B0                   ; Calls the routine that randomizes all players characters.
   BSR         $180860                   ; Calls the routine that replaces the pallete of all players.
   LEA         $914000, A1               ; Code from the original game readjusted.
   JMP         $8948                     ; Jumps back to where it stopped in the original code.
 
 
 
-  JMP         $1801C0.L                 ; Replace 18A98.
+  JSR         $1801C0.L                 ; Replace 18A94.
+  NOP
+  NOP
 
 ; ORG         $1801C0
 
-  BSR         $180600                   ; Block of code that replaces the pallete.
+                                        ; Block of code that replaces the pallete and randomizes the character.
+  BSR         $181A30                   ; Calls the routine that saves some registers values.
+  BSR         $180780                   ; Calls the routine that randomizes a character.
+  BSR         $180500                   ; Calls color conflict routine.
   BSR         $180800                   ; Calls the routine that replaces the player color.
-  MOVE.B      #1, (A6)                  ; Code from the original game readjusted.
-  JMP         $18A9E                    ; Jumps back to where it stopped in the original code.
+  BSR         $181B80                   ; Calls the routine that sets the player custom pallete ID.
+  BSR         $180900                   ; Calls the routine that fixes the player HUD.
+  BSR         $181A60                   ; Calls the routine that retore some registers values.
+  RTS                                   ; Returns back to the routine that called this code.
 
 
 
@@ -85,9 +88,13 @@
 
 ; ORG         $1801F0
 
-  BSR         $180600                   ; Block of code that replaces the pallete.
-  BSR         $180500                   ; Calls color confirmation routine.
+                                        ; Block of code that handles character confirmation.
+  BSR         $181A30                   ; Calls the routine that saves some registers values.
+  BSR         $180700                   ; Calls the routine that sets the character randomizer flag.
+  BSR         $180780                   ; Calls the character randomizer routine.
+  BSR         $180500                   ; Calls color conflict routine.
   BSR         $180800                   ; Calls the routine that replaces the player color.
+  BSR         $181A60                   ; Calls the routine that retore some registers values.
   MOVE.B      #$1, (A6)                 ; Code from the original game readjusted.
   JMP         $71E0                     ; Jumps back to where it stopped in the original code.
 

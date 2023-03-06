@@ -9,8 +9,8 @@
 ; ORG         $181800
 
                                         ; Block of code that calculate and sets the custom outside screen flag.
-  CMP.B       #$18, ($3, A6)            ; Compares 18 and ($3 + A6), Slisaur ID.
-  BNE         $181826                   ; If it is not 18, go to the last line.
+  CMP.B       #$18, ($3, A6)            ; Compares 18 and ($3 + A6), the enemy ID.
+  BNE         $181826                   ; If it is not 18, it is not Slisaur, go to the last line.
   MOVE.W      ($8, A6), D0              ; Stores ($8 + A6) inside D0, Slisaur position X.
   ADD.W       #$1E, D0                  ; Adds 1E to D0, a left side space tolerance.
   SUB.W       ($744, A5), D0            ; Subtracts ($744 + A5) from D0, the camera position.
