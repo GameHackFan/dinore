@@ -45,5 +45,5 @@
 ; coin score of all players might go out of sync, so 
 ; this fix not just removes that, it also allows the 
 ; players to know how much coins each one of them used.
-;
+; 
 ; 181200:   Coin Score Fix (Current Player)

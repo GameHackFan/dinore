@@ -86,7 +86,7 @@
   OR.W        D6, D0                    ; D6 or D0, adds the current brightness to the color.
   MOVE.W      D0, (A1)+                 ; Stores D0 inside (A1) and increment A1, sets the color.
   DBRA        D1, $1808C2               ; If D1 is bigger than 0, go back 3 lines above.
-  RTS                                   ; Returns back to the caller of this routine.
+  RTS                                   ; Returns back to the caller of this routine. 
 
 
 

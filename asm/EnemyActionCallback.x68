@@ -36,7 +36,7 @@
 ; being clinched, etc. Routines that changes the 
 ; enemy's target, adds invulnerability to the enemies 
 ; are being called in some of the callbacks available 
-; here.
+; here. 
 ; 
 ; 180C00:   Enemy Knocked Down Callback (Current Enemy)
 ; 180C30:   Enemy Being Clinched Callback (Current Enemy)

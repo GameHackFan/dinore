@@ -93,7 +93,7 @@
 ; action instead of an idle action, making it even 
 ; harder to beat him on corners (All his attacks
 ; are executed when he is in his aggressive action).
-;
+; 
 ; 181800:   Sets Outside Screen Flag (Slisaur)
 ; 181840:   Force Aggressive Action When Outside Screen Flag is Active (Slisaur)
 ; 181880:   Tyrog Try To Change To Slap Action

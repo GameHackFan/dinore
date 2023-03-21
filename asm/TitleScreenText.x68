@@ -71,7 +71,7 @@
 ; and project link text. It also executes all 
 ; the necessary routines to print those texts 
 ; in the title screen.
-;
+; 
 ; $181000:    Draw Sprites in Line
 ; $181030:    Draw Hack Texts on Screen 
 ; $1810A0:    Draw Hack Texts on Screen Caller (Title Screen No Coin)

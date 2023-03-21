@@ -147,7 +147,7 @@
 ; This module has routines that execute several 
 ; other routines to ensure that the new features
 ; present in this hack will work as it should.
-;
+; 
 ; $180100:    Handle Color Select (Select Screen)
 ; $180130:    Handle Color Select (Mid Game)
 ; $180160:    Handle Pallete Replace (All Players)

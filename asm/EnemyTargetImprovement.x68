@@ -66,7 +66,7 @@
 ; in some specific cases related to Fessenden. The 
 ; 180D00 target change code now has almost the same
 ; probability for all players.
-;
+; 
 ; 180D00:   Update Enemy Target (Current Enemy)
 ; 180E00:   Change Enemy Target (Current Enemy is Fessenden 2nd Form)
 ; 180E20:   Update Enemy Target (Fessenden 1st Form)

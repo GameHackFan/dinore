@@ -85,7 +85,7 @@
 
 
 ; This module provides routines that handle the color select.
-;
+; 
 ; 180300:   Handles Color Select (Select Screen).
 ; 180360:   Handles Color Select (Mid Game).
 ; 1803C0:   Saves Color From D1.

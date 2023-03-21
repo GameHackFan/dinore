@@ -86,7 +86,7 @@
 ; when the game is in the profile screen, score screen and 
 ; both ending scenes, to make sure no custom color is being 
 ; used.
-;
+; 
 ; $180A00:    Set Main Characters Palletes to Default
 ; $180A80:    Clears All Players Active Flag
 ; $180AA0:    Set Main Characters Palletes to Default Caller (Score Screen, 2nd Ending Scene, Profile Screen)

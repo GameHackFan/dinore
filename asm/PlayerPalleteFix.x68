@@ -251,7 +251,7 @@
 ; pallete ID instead of resetting it to original and has a
 ; routine that forces the player speech balloons to use
 ; pallete 16.
-;
+; 
 ; 181B00:   Force Custom Pallete ID 1 (Current Player)
 ; 181B30:   Force Custom Pallete ID 2 (Current Player)
 ; 181B60:   Force Pallete ID 16

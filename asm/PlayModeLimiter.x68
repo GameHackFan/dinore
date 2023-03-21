@@ -21,17 +21,17 @@
   AND.B       #0, D2                    ; D2 and 0, 0 is 3 players 3 coin chute, 1 is 3 players 1 coin chute.
   MOVE.B      D2, ($D, A4)              ; Code from the original game, sets the play mode flag.
   RTS                                   ; Returns back to the routine that called this code.
-  NOP                                   ; No operation, does nothing. 
-  NOP                                   ; No operation, does nothing. 
-  NOP                                   ; No operation, does nothing. 
-  NOP                                   ; No operation, does nothing. 
-  NOP                                   ; No operation, does nothing. 
-  NOP                                   ; No operation, does nothing. 
+  NOP                                   ; No operation, does nothing.
+  NOP                                   ; No operation, does nothing.
+  NOP                                   ; No operation, does nothing.
+  NOP                                   ; No operation, does nothing.
+  NOP                                   ; No operation, does nothing.
+  NOP                                   ; No operation, does nothing.
 
 
 
 ; This module forces the play mode to always 
 ; be 0 (3 players mode with 3 coins chute).
-;
+; 
 ; $181300:    Forces Play Mode to 0 (Game Starts)
 ; $0A85DC:    Forces Play Mode to 0 (Service Menu)

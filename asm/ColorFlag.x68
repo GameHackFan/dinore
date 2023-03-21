@@ -175,5 +175,5 @@
 ; 1805D0:   Set Player Pallete ID Inside the Car.
 ; 180600:   Set Player Driver Pallete ID to CPU Driver.
 ; 180620:   Saves Seat Pallete ID.
-;
+; 
 ; 08C7B0:   Force Mess As CPU Driver.

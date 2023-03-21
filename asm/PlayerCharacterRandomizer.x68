@@ -85,7 +85,7 @@
 ; player character randomizer feature will work properly.
 ; To activate the character randomizer, select the character
 ; pressing start.
-;
+; 
 ; 180700:    Sets the Randomizer Flag.
 ; 180730:    Randomizes a Number in D1, D6.
 ; 180760:    Sets Random Character (Current Player).

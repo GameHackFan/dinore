@@ -26,5 +26,5 @@
 ; region. This game has a concept of power, 
 ; the bigger your power, the stronger you 
 ; will hit.
-;
+; 
 ; 181600: Draws the power indicator (Current Player)

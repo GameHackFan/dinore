@@ -47,4 +47,4 @@ Known Bugs:
 
 
 
-WHAT'S NEXT: There isn't much left to do for this hack, maybe adjust some of the changes made. Forcing the sprites to use different palletes by changing their pallete values inside the ROM instead of remapping them when the game is running is one of the few major things left to improve.
+WHAT'S NEXT: There isn't much left to do for this hack, maybe adjust some of the changes made. Forcing the sprites to use different palletes by changing their pallete values inside the ROM instead of remapping them when the game is running is one of the few major things left to improve. 

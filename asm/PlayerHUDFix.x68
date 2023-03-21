@@ -34,5 +34,5 @@
 ; This module has a routine that fixes the player HUD.
 ; The extra features like the player character randomizer
 ; might cause bugs in the player HUD, so this fix is needed.
-;
+; 
 ; 180900:   Fix Player HUD (Current Player)

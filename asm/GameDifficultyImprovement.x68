@@ -16,7 +16,7 @@
   AND.B       #$7, D0                   ; D0 and 7, put the value at the original range.
   ADD.B       D0, D0                    ; Adds D0 to D0, doubles the current level.
   ADDQ.B      #1, D0                    ; Adds 1 to D0, to ensure maximum level is reached.
-  OR.W        #$70, D0                  ; D0 or 70, 00 - 70, 01 - 71, etc.
+  OR.W        #$70, D0                  ; D0 or 70, 00 - 70, 01 - 71, etc. 
   RTS                                   ; Returns back to the routine that called this code.
 
 

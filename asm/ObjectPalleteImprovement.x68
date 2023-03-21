@@ -255,7 +255,7 @@
 ; This module has a routine that allows objects / enemies to
 ; spawn with a custom pallete ID. It also modifies some code to 
 ; allow the custom pallete ID instead of resetting it to original.
-;
+; 
 ; 181C00:   Force Custom Pallete ID (Level Trigger Object Spawn)
 ; 181C60:   Force Custom Pallete ID 2 (Object Spawn)
 ; 181C90:   Force Custom Pallete ID 3 (Object Spawn)

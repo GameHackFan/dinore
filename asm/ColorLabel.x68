@@ -47,6 +47,6 @@
 ; This module provides routines that display 
 ; a label that represents the current selected 
 ; color by the player.
-;
+; 
 ; 180400:   Prints the Color Label (Select Screen)
 ; 180440:   Prints the Color Label (Mid Game)
