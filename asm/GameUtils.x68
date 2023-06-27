@@ -30,6 +30,7 @@
   RTS                                   ; Returns back to the routine that called this code.
 
 
+
 ; ORG         $181A60
 
                                         ; Block of code that restore some register values.
@@ -40,6 +41,7 @@
   MOVE.L      ($7FF0, A5), A1           ; Stores ($7FF0 + A5) inside A1, restores A1 value.
   MOVE.L      ($7FF4, A5), A6           ; Stores ($7FF4 + A5) inside A6, restores A6 value.
   RTS                                   ; Returns back to the routine that called this code.
+
 
 
 ; ORG         $181A90
@@ -54,11 +56,31 @@
 
 
 
+; ORG         $181AB0
+
+                                        ; Block of code that stores the current time inside D6.
+  CLR.L       D0                        ; Clears D0.
+  MOVE.W      ($7EFE, A5), D0           ; Stores ($7EFE + A5) inside D0, the seed value.
+  MULU.W      #$41A7, D0                ; Multiples D0 by 41A7, part of the randomization calc.
+  MOVE.W      D0, ($7EFE, A5)           ; Stores D0 inside ($7EFE + A5), so D0 can be used.
+  CLR.L       D0                        ; Clears D0.
+  MOVE.B      ($75C2, A5), D0           ; Stores ($75C2 + A5) inside D0, current frame, to make dynamic.
+  ADD.W       ($7EFE, A5), D0           ; Adds ($7EFE + A5) to D0, the value calculated earlier.
+  LSR.L       #4, D0                    ; Shifts right D0 bits by 4, the final randomized value.
+  MOVE.W      D0, ($7EFE, A5)           ; Stores D0 inside ($7EFE + A5), so D0 can be used.
+  CLR.L       D0                        ; Clears D0.
+  MOVE.W      ($7EFE, A5), D0           ; Stores ($7EFE + A5) inside D0, the seed value.
+  RTS                                   ; Returns back to the routine that called this code.
+
+
+
 ; This module has a routines that saves and restore registers 
 ; values. It also has a routine that gets the current time
-; in frames.
+; in frames and a routine that randomizes a number and saves
+; it in memory as seed for the next randomization
 ; 
 ; 181A00:   Saves Current Time in Frames in D6.
 ; 181A30:   Saves D0, D1, D6, A0, A1, A6 in RAM at FFFFE0.
 ; 181A60:   Restores D0, D1, D6, A0, A1, A6 from RAM at FFFFE0.
 ; 181A90:   Saves Stage ID and Area ID inside D6.
+; 181AB0:   Randomizes a Value Inside D0.

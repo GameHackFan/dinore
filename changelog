@@ -1,3 +1,36 @@
+Version 1.4:
+- Added support for object spawning with custom pallete ID in Hogg area.
+- Improved the way Ammo, Weapons and Treasure custom pallete ID are randomized.
+- Fixed a bug where Rod broken piece was not grabbing Rod's custom pallete.
+- Fixed a bug where Explosive Barrels were not resetting their color after being grabbed.
+- Forced all Slice / Slisaur Boomerang sprites to use pallete 16.
+- Improved Hannah's 3rd color.
+- Improved Hannah Custom Pallete (pallete 03), the one that is used by body parts and objects.
+- Barrels now spawn with a random custom pallete ID optimized by area.
+- Butcher actions were changed, see change A to D.
+- Change A: Butcher punch attack strikebox width increased from 53 to 74 pixels.
+- Change B: Butcher punch attack strikebox moved forward 5 pixels.
+- Change C: The new strikebox better covers his body and has a better range.
+- Change D: The strikebox still allows player to stay inside him, but it is risky to do that.
+- Morgan actions were changed, see change E to H.
+- Change E: Morgan wake up gun blow attack was brought back.
+- Change F: Morgan wake up gun blow strikebox changed from 6A to 7E.
+- Change G: The new strikebox better covers his body and has a better range.
+- Change H: The strikebox now doesn't allow morgan to miss his blow if players stand inside him.
+- Morgue and Fessenden 1st actions were changed, see change I to L.
+- Change I: Morgue / Fessenden 1st slap attack strikebox width increased from 85 to 108 pixels.
+- Change J: Morgue / Fessenden 1st slap attack strikebox moved forward 5 pixels.
+- Change K: The strikebox changes better covers his body and has a better range.
+- Change L: The strikebox now doesn't allow morgue to miss his slap if players stand inside him.
+- Tyrog actions were changed, see change M to P.
+- Change M: Tyrog wake up slap attack was brought back.
+- Change N: Tyrog slap attack strikebox width increased from 95 to 127 pixels.
+- Change O: Tyrog slap attack strikebox moved forward 8 pixels.
+- Change P: The strikebox changes better covers his body and has a better range.
+- Change Q: The strikebox now doesn't allow tyrog to miss his slap if players stand inside him.
+- Forced enemies to spawn with rage set to max (FF), Most enemies in the game spawns with rage 0.
+
+
 Version 1.3:
 - Changed the way the game handles custom pallete, see changes A to F.
 - Change A: The custom palletes are now being handled with internal game flag to handle colors.
