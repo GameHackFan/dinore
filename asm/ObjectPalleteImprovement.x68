@@ -31,7 +31,7 @@
   MOVE.W      D0, ($10, A0)             ; Stores D0 inside ($10, A0), the object Y position.
   CLR.W       D0                        ; Clears D0.
   SWAP        D0                        ; Inverts D0 higher and lower bits, D0 lower bytes are in use.
-  JMP         $FE48                     ; Jumps back to where it stopped in the original code.
+  RTS                                   ; Returns back to the routine that called this code.
   
 
 
@@ -366,10 +366,23 @@
 
                                         ; Block of code that forces custom pallete ID (several objects).
   MOVE.B      ($DE, A6), ($23, A6)      ; Stores ($DE + A6) inside ($23 + A6), the custom pallete ID.
-  NOP                                   ; No operation, does nothing. 
+  NOP                                   ; No operation, does nothing.
 
 
 
+<<<<<<< HEAD
+; ORG         $3590A                    ; Replace 3590A (There is space to replace everything).
+
+                                        ; Block of code that removes custom pallete ID (Lash Terhune).
+  MOVE.B      #$1, (A0)                 ; Code from the original game readjusted.
+  MOVE.W      #$0C, ($20, A0)           ; Code from the original game that was replaced.
+  CLR.W       ($26, A0)                 ; Code from the original game that was replaced.
+  CLR.W       ($DE, A0)                 ; Clears ($DE + A0), removes custom pallete ID.
+
+
+
+=======
+>>>>>>> branch 'main' of https://github.com/GameHackFan/dinore.git
 ; This module has a routine that allows objects / enemies to
 ; spawn with a custom pallete ID. It also modifies some code to 
 ; allow the custom pallete ID instead of resetting it to original.
@@ -402,6 +415,10 @@
 ; 02A086:   Force Custom Pallete ID 11 / Pallete Fix 12 (Current Object / Character)
 ; 02AD42:   Force Custom Pallete ID 12 / Pallete Fix 13 (Current Object / Character)
 ; 02B55A:   Force Custom Pallete ID 13 / Pallete Fix 14 (Current Object / Character)
+<<<<<<< HEAD
+; 03590A:   Remove Custom Pallete (Lash Terhune)
+=======
+>>>>>>> branch 'main' of https://github.com/GameHackFan/dinore.git
 ;
 ; 181C7C:   Random Custom Pallete ID Data (Ammo, add the data below)
 ;           86 00

@@ -1,4 +1,4 @@
-Seed:   16807, 18749, 22571, 26573, 28559, 30727, 61673, 65539
+// Seed:   16807, 18749, 22571, 26573, 28559, 30727, 61673, 65539
 
 
 let a = [0, 0, 0, 0];
@@ -33,5 +33,25 @@ s += d + "\n" + e + "\n" + f;
 alert(s);
 
 
+
+GameUtils 181AB0
+
+const a = [0, 0, 0, 0, 0, 0, 0, 0];
+const max = 65535;
+const shift = 4;
+const frames = Array.from(Array(60).keys());
+const resultRange = 7;  // 0 - 7
+const random = 16807;
+let seed = 0;
+
+
+for(let i = 0; i < 65536; i ++)
+{
+  let index = Math.floor(Math.random() * frames.length);
+  seed = (((seed * random) + (frames[index] + 1)) >> shift) & max;
+  a[seed & resultRange]++;
+}
+
+alert(a);
 
 

@@ -5,3 +5,7 @@ PD:   Pallete and Sprite Data
 SI:   Sprite ID / Address.
 NN:   The amount of times of the N at the end.
 (PD PD    SI SI) * N can repeat N times.
+
+
+D6B28: Animation Start
+F0027: Animation End?

@@ -1,7 +1,8 @@
 00: 
-01:  
+01: 
 05: Slice
 0F: Butcher
+26: Fessenden 1st Form.
 15: Morgan 1st Form
 16: Morgue 2nd Form
 18: Slisaur
@@ -9,3 +10,12 @@
 1B: Tyrog Parasite
 25: Fessenden 1st Form.
 22: Fessenden 2nd form.
+
+
+Shivat
+48798, line of code that controls his meek timer.
+4848E, line of code that can be used to control his spawn.
+
+
+R Hopper
+?, line of code that controls his meek timer.

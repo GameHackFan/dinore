@@ -1,5 +1,10 @@
+FF8022.B:   Dipswitch A Data.
+FF8023.B:   Dipswitch B Data (Dip B6 and B8 to display hitboxes - A0).
+FF8024.B:   Dipswitch C Data.
+
 FF8744.W:   Camera Position.
 
+FF84AA.B:   Debug Mode Flag.
 
 FF847D.B:   P1 Coin Amount
 FF848D.B:   P2 Coin Amount
@@ -11,12 +16,19 @@ FF84E8.L:   Stage Time
 FF8634.L:   Character Select Screen Time
 FF863A:     Player 1 Character ID
 
-
+FF8744:     Camera Position / Area Position
 FF8786:     Area ID
 
+FFB358:     Amount Enemies Spawned (To unlock screen).
 
-FFF768:     Game Difficulty 1 
+FFF768:     Game Difficulty 1
 
 
 
-8C1D4: Can be used to clear car color flags?
+08C1D4: Can be used to clear car color flags?
+014230: Animation Pointer?
+00119C: Randomizes and Store a value in D0?
+004818: Prepares an barrel / treasure / weapon to spawn?
+00483C: Prepares an enemy to spawn?
+00189C: Calculates elevation?
+001862: Calculates position X, movement?

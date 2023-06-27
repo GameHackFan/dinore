@@ -127,6 +127,7 @@ Game Utils
 181A30:   Saves D0, D1, D6, A0, A1, A6 in RAM at FFFFE0.
 181A60:   Restores D0, D1, D6, A0, A1, A6 from RAM at FFFFE0.
 181A90:   Saves Stage ID and Area ID inside D6.
+181AB0:   Randomizes a Value Inside D0.
 
 
 Player Pallete Fix
@@ -139,13 +140,18 @@ Player Pallete Fix
 
 Object Pallete Improvement
 
-181C00:   Force Custom Pallete ID 1 (Object Spawn)
-181C60:   Force Custom Pallete ID 2 (Object Spawn)
-181C90:   Force Custom Pallete ID 3 (Object Spawn)
-181CB0:   Force Custom Pallete ID 4 (Object Spawn)
+181C00:   Force Custom Pallete ID (Level Trigger Object Spawn)
+181C60:   Sets Random Custom Pallete ID (Ammo Drop)
+181C90:   Sets Random Custom Pallete ID (Weapon Drop)
+181CB0:   Sets Random Custom Pallete ID (Treasure Drop)
 181CD0:   Force Custom Pallete ID 5 (Object Spawn)
-181D00:   Force Custom Pallete ID 6 (Object Spawn)
-181D40:   Force Custom Pallete ID 7 (Object Spawn)
+181D00:   Broken Pieces Custom Pallete ID Fix (Object).
+181D30:   Sets Custom Pallete ID (Fessenden Body Parts)
+181D60:   Sets Random Custom Pallete ID (Barrels)
+181DA0:   Sets Random Custom Pallete ID (Rolling Barrels)
+181DE0:   Sets Random Custom Pallete ID (05 or 06)
+181E10:   Sets Random Custom Pallete ID From a List (Area Based List)
+181F00:   Sets Random Custom Pallete ID From a List (Current Object)
 
 
 ------------------------------------------------------------------------
@@ -162,6 +168,7 @@ Callers
 008A4E:   Calls 180160
 00B274:   Calls 180100
 00FE42:   Calls 181C00
+00FF06:   Calls 181C00
 0108DE:   Calls 180C30
 0151FE:   Calls 180AA0
 016456:   Calls 180220
@@ -173,6 +180,13 @@ Callers
 024BD4:   Calls 181CD0
 024C0E:   Calls 181CB0
 024C8A:   Calls 181C60
+0259F2:   Calls 181D00
+028D82:   Calls 181D60
+0292B0:   Calls 181D00
+029300:   Calls 181D00
+0294C2:   Calls 181D00
+09464A:   Calls 181D00
+0946D2:   Calls 181D00
 02AFE4:   Calls 180C00
 02B55C:   Calls 181510
 036C34:   Calls 1814B0
@@ -186,6 +200,7 @@ Callers
 055A4C:   Calls 181CD0
 05738E:   Calls 181CD0
 05882E:   Calls 1814B0
+05B93C:   Calls 181DA0
 05BFAC:   Calls 181CD0
 067ED2:   Calls 1814B0
 067F46:   Calls 180E20
@@ -196,7 +211,7 @@ Callers
 09377A:   Calls 181CD0
 096FDE:   Calls 1805D0
 0971E0:   Calls 180600
-097656:   Calls 181D40
+097656:   Calls 181D30
 09A54E:   Calls 1810A0
 09A572:   Calls 1810C0
 09A828:   Calls 180AA0
@@ -297,9 +312,11 @@ Object Pallete Fix / Improvement
 028434: Object Pallete Fix 8
 0289EA: Object Pallete Fix 9
 028E5A: Object Pallete Fix 10
+028F76: Explosive Barrel Blink Pallete Fix
 02A086: Object Pallete Fix 11
 02AD42: Object Pallete Fix 12
 02B55A: Object Pallete Fix 13
+03590A: Remove Custom Pallete (Lash Terhune)
 
 
 Weapon Bullets
@@ -310,24 +327,20 @@ Weapon Bullets
 02858A: Bazooka Bullets Refill (Ammo Pickup)
 
 
-Tyrog Wake Up Action
-
-037416: Tyrog Wake Up Action Changed (Tries to Move, ends at 3742E)
-
-
 Tyrog Puke Pallete Fix
 
 4D6C0: Tyrog Puke Pallete Fix (01 to 03 - 81 to 83)
 
 
-Morgan Wake Up Action
-
-0527CC: Morgan Wake Up Action Changed (Tries to Move, ends at 527E4)
-
 
 Mack Keep Coming Back
 
 53766: Mack (Triceratops) Keep Coming Back After Leaving the Screen
+
+
+Morgan Wake Up Gun Blow Strikebox
+
+0711CC: Morgan Wake Up Gun Blow Strikebox ID Change.
 
 
 3rd Stage CPU Car Driver
@@ -398,54 +411,247 @@ Sprite Pallete Fix
 0E47D6: Type 1 Knife 16 Pallete Fix
 0E52A2: Type 1 Knife 17 Pallete Fix 1
 0E52A8: Type 1 Knife 17 Pallete Fix 2
-0E5AC0: Slice Boomerang 1 Pallete Fix 1
-0E5AC4: Slice Boomerang 1 Pallete Fix 2
-0E5AE0: Slice Boomerang 2 Pallete Fix 1
-0E5AE4: Slice Boomerang 2 Pallete Fix 2
-0E5B0C: Slice Boomerang 3 Pallete Fix 1
-0E5B10: Slice Boomerang 3 Pallete Fix 2
-0E5B30: Slice Boomerang 4 Pallete Fix 1
-0E5B34: Slice Boomerang 4 Pallete Fix 2
-0E5BA0: Slice Boomerang 5 Pallete Fix 1
-0E5BA4: Slice Boomerang 5 Pallete Fix 2
-0E5BBC: Slice Boomerang 6 Pallete Fix 1
-0E5BC0: Slice Boomerang 6 Pallete Fix 2
-0E5BE0: Slice Boomerang 7 Pallete Fix 1
-0E5BE4: Slice Boomerang 7 Pallete Fix 2
-0E5C04: Slice Boomerang 8 Pallete Fix 1
-0E5C08: Slice Boomerang 8 Pallete Fix 2
-0E5C24: Slice Boomerang 9 Pallete Fix 1
-0E5C28: Slice Boomerang 9 Pallete Fix 2
-0E5C40: Slice Boomerang 10 Pallete Fix 1
-0E5C44: Slice Boomerang 10 Pallete Fix 2
-0E5C60: Slice Boomerang 11 Pallete Fix 1
-0E5C64: Slice Boomerang 11 Pallete Fix 2
-0E5C80: Slice Boomerang 12 Pallete Fix 1
-0E5C84: Slice Boomerang 12 Pallete Fix 2
-0E5CAC: Slice Boomerang 13 Pallete Fix 1
-0E5CB0: Slice Boomerang 13 Pallete Fix 2
-0E5CD4: Slice Boomerang 14 Pallete Fix 1
-0E5CD8: Slice Boomerang 14 Pallete Fix 2
-0E5D00: Slice Boomerang 15 Pallete Fix 1
-0E5D04: Slice Boomerang 15 Pallete Fix 2
-0E5D58: Slice Boomerang 16 Pallete Fix 1
-0E5D5C: Slice Boomerang 16 Pallete Fix 2
-0E5D7C: Slice Boomerang 17 Pallete Fix 1
-0E5D80: Slice Boomerang 17 Pallete Fix 2
-0E5D9C: Slice Boomerang 18 Pallete Fix 1
-0E5DA0: Slice Boomerang 18 Pallete Fix 2
-0E5DC0: Slice Boomerang 19 Pallete Fix 1
-0E5DDC: Slice Boomerang 20 Pallete Fix 1
-0E5DE0: Slice Boomerang 20 Pallete Fix 2
-0E5E08: Slice Boomerang 21 Pallete Fix 1
-0E5E0C: Slice Boomerang 21 Pallete Fix 2
-0E5E10: Slice Boomerang 21 Pallete Fix 3
-0E5E34: Slice Boomerang 22 Pallete Fix 1
-0E5E38: Slice Boomerang 22 Pallete Fix 2
-0E5E64: Slice Boomerang 23 Pallete Fix 1
-0E5E68: Slice Boomerang 23 Pallete Fix 2
-0EE9AE: Slice Boomerang 24 Pallete Fix 1
-0EE9B2: Slice Boomerang 24 Pallete Fix 2
+0E5AC0: Slice / Slisaur Boomerang Pallete Fix
+0E5AC4: Slice / Slisaur Boomerang Pallete Fix
+0E5AE0: Slice / Slisaur Boomerang Pallete Fix
+0E5AE4: Slice / Slisaur Boomerang Pallete Fix
+0E5B0C: Slice / Slisaur Boomerang Pallete Fix
+0E5B10: Slice / Slisaur Boomerang Pallete Fix
+0E5B30: Slice / Slisaur Boomerang Pallete Fix
+0E5B34: Slice / Slisaur Boomerang Pallete Fix
+0E5BA0: Slice / Slisaur Boomerang Pallete Fix
+0E5BA4: Slice / Slisaur Boomerang Pallete Fix
+0E5BBC: Slice / Slisaur Boomerang Pallete Fix
+0E5BC0: Slice / Slisaur Boomerang Pallete Fix
+0E5BE0: Slice / Slisaur Boomerang Pallete Fix
+0E5BE4: Slice / Slisaur Boomerang Pallete Fix
+0E5C04: Slice / Slisaur Boomerang Pallete Fix
+0E5C08: Slice / Slisaur Boomerang Pallete Fix
+0E5C24: Slice / Slisaur Boomerang Pallete Fix
+0E5C28: Slice / Slisaur Boomerang Pallete Fix
+0E5C40: Slice / Slisaur Boomerang Pallete Fix
+0E5C44: Slice / Slisaur Boomerang Pallete Fix
+0E5C60: Slice / Slisaur Boomerang Pallete Fix
+0E5C64: Slice / Slisaur Boomerang Pallete Fix
+0E5C80: Slice / Slisaur Boomerang Pallete Fix
+0E5C84: Slice / Slisaur Boomerang Pallete Fix
+0E5CAC: Slice / Slisaur Boomerang Pallete Fix
+0E5CB0: Slice / Slisaur Boomerang Pallete Fix
+0E5CD4: Slice / Slisaur Boomerang Pallete Fix
+0E5CD8: Slice / Slisaur Boomerang Pallete Fix
+0E5D00: Slice / Slisaur Boomerang Pallete Fix
+0E5D04: Slice / Slisaur Boomerang Pallete Fix
+0E5D58: Slice / Slisaur Boomerang Pallete Fix
+0E5D5C: Slice / Slisaur Boomerang Pallete Fix
+0E5D7C: Slice / Slisaur Boomerang Pallete Fix
+0E5D80: Slice / Slisaur Boomerang Pallete Fix
+0E5D9C: Slice / Slisaur Boomerang Pallete Fix
+0E5DA0: Slice / Slisaur Boomerang Pallete Fix
+0E5DC0: Slice / Slisaur Boomerang Pallete Fix
+0E5DD8: Slice / Slisaur Boomerang Pallete Fix
+0E5DDC: Slice / Slisaur Boomerang Pallete Fix
+0E5DE0: Slice / Slisaur Boomerang Pallete Fix
+0E5E04: Slice / Slisaur Boomerang Pallete Fix
+0E5E08: Slice / Slisaur Boomerang Pallete Fix
+0E5E0C: Slice / Slisaur Boomerang Pallete Fix
+0E5E10: Slice / Slisaur Boomerang Pallete Fix
+0E5E2C: Slice / Slisaur Boomerang Pallete Fix
+0E5E30: Slice / Slisaur Boomerang Pallete Fix
+0E5E34: Slice / Slisaur Boomerang Pallete Fix
+0E5E38: Slice / Slisaur Boomerang Pallete Fix
+0E5E5C: Slice / Slisaur Boomerang Pallete Fix
+0E5E60: Slice / Slisaur Boomerang Pallete Fix
+0E5E64: Slice / Slisaur Boomerang Pallete Fix
+0E5E68: Slice / Slisaur Boomerang Pallete Fix
+0E5E88: Slice / Slisaur Boomerang Pallete Fix
+0E5E8C: Slice / Slisaur Boomerang Pallete Fix
+0E5E90: Slice / Slisaur Boomerang Pallete Fix
+0E5E94: Slice / Slisaur Boomerang Pallete Fix
+0E5EB8: Slice / Slisaur Boomerang Pallete Fix
+0E5EBC: Slice / Slisaur Boomerang Pallete Fix
+0E5EC0: Slice / Slisaur Boomerang Pallete Fix
+0E5EC4: Slice / Slisaur Boomerang Pallete Fix
+0E5EE4: Slice / Slisaur Boomerang Pallete Fix
+0E5EE8: Slice / Slisaur Boomerang Pallete Fix
+0E5F10: Slice / Slisaur Boomerang Pallete Fix
+0E5F14: Slice / Slisaur Boomerang Pallete Fix
+0E5F40: Slice / Slisaur Boomerang Pallete Fix
+0E5F64: Slice / Slisaur Boomerang Pallete Fix
+0E5F68: Slice / Slisaur Boomerang Pallete Fix
+0E5F6C: Slice / Slisaur Boomerang Pallete Fix
+0E5F98: Slice / Slisaur Boomerang Pallete Fix
+0E5F9C: Slice / Slisaur Boomerang Pallete Fix
+0E600C: Slice / Slisaur Boomerang Pallete Fix
+0E6010: Slice / Slisaur Boomerang Pallete Fix
+0E6034: Slice / Slisaur Boomerang Pallete Fix
+0E6038: Slice / Slisaur Boomerang Pallete Fix
+0E6068: Slice / Slisaur Boomerang Pallete Fix
+0E606C: Slice / Slisaur Boomerang Pallete Fix
+0E6094: Slice / Slisaur Boomerang Pallete Fix
+0E6098: Slice / Slisaur Boomerang Pallete Fix
+0E612C: Slice / Slisaur Boomerang Pallete Fix
+0E6130: Slice / Slisaur Boomerang Pallete Fix
+0E6150: Slice / Slisaur Boomerang Pallete Fix
+0E6154: Slice / Slisaur Boomerang Pallete Fix
+0E6178: Slice / Slisaur Boomerang Pallete Fix
+0E617C: Slice / Slisaur Boomerang Pallete Fix
+0E619C: Slice / Slisaur Boomerang Pallete Fix
+0E61A0: Slice / Slisaur Boomerang Pallete Fix
+0E61BC: Slice / Slisaur Boomerang Pallete Fix
+0E61C0: Slice / Slisaur Boomerang Pallete Fix
+0E61D8: Slice / Slisaur Boomerang Pallete Fix
+0E61DC: Slice / Slisaur Boomerang Pallete Fix
+0E61F4: Slice / Slisaur Boomerang Pallete Fix
+0E61F8: Slice / Slisaur Boomerang Pallete Fix
+0E6214: Slice / Slisaur Boomerang Pallete Fix
+0E6218: Slice / Slisaur Boomerang Pallete Fix
+0E6248: Slice / Slisaur Boomerang Pallete Fix
+0E624C: Slice / Slisaur Boomerang Pallete Fix
+0E6278: Slice / Slisaur Boomerang Pallete Fix
+0E627C: Slice / Slisaur Boomerang Pallete Fix
+0E62AC: Slice / Slisaur Boomerang Pallete Fix
+0E62B0: Slice / Slisaur Boomerang Pallete Fix
+0E633C: Slice / Slisaur Boomerang Pallete Fix
+0E6340: Slice / Slisaur Boomerang Pallete Fix
+0E6360: Slice / Slisaur Boomerang Pallete Fix
+0E6364: Slice / Slisaur Boomerang Pallete Fix
+0E6388: Slice / Slisaur Boomerang Pallete Fix
+0E638C: Slice / Slisaur Boomerang Pallete Fix
+0E63B4: Slice / Slisaur Boomerang Pallete Fix
+0E63D4: Slice / Slisaur Boomerang Pallete Fix
+0E63D8: Slice / Slisaur Boomerang Pallete Fix
+0E63DC: Slice / Slisaur Boomerang Pallete Fix
+0E6400: Slice / Slisaur Boomerang Pallete Fix
+0E6404: Slice / Slisaur Boomerang Pallete Fix
+0E6408: Slice / Slisaur Boomerang Pallete Fix
+0E640C: Slice / Slisaur Boomerang Pallete Fix
+0E6430: Slice / Slisaur Boomerang Pallete Fix
+0E6434: Slice / Slisaur Boomerang Pallete Fix
+0E6438: Slice / Slisaur Boomerang Pallete Fix
+0E643C: Slice / Slisaur Boomerang Pallete Fix
+0E646C: Slice / Slisaur Boomerang Pallete Fix
+0E6470: Slice / Slisaur Boomerang Pallete Fix
+0E6474: Slice / Slisaur Boomerang Pallete Fix
+0E6478: Slice / Slisaur Boomerang Pallete Fix
+0E64A4: Slice / Slisaur Boomerang Pallete Fix
+0E64A8: Slice / Slisaur Boomerang Pallete Fix
+0E64AC: Slice / Slisaur Boomerang Pallete Fix
+0E64B0: Slice / Slisaur Boomerang Pallete Fix
+0E64DC: Slice / Slisaur Boomerang Pallete Fix
+0E64E0: Slice / Slisaur Boomerang Pallete Fix
+0E64E4: Slice / Slisaur Boomerang Pallete Fix
+0E64E8: Slice / Slisaur Boomerang Pallete Fix
+0E650C: Slice / Slisaur Boomerang Pallete Fix
+0E6510: Slice / Slisaur Boomerang Pallete Fix
+0E653C: Slice / Slisaur Boomerang Pallete Fix
+0E6540: Slice / Slisaur Boomerang Pallete Fix
+0E656C: Slice / Slisaur Boomerang Pallete Fix
+0E659C: Slice / Slisaur Boomerang Pallete Fix
+0E65A0: Slice / Slisaur Boomerang Pallete Fix
+0E65A4: Slice / Slisaur Boomerang Pallete Fix
+0E65D8: Slice / Slisaur Boomerang Pallete Fix
+0E65DC: Slice / Slisaur Boomerang Pallete Fix
+0E6654: Slice / Slisaur Boomerang Pallete Fix
+0E664E: Slice / Slisaur Boomerang Pallete Fix
+0E6658: Slice / Slisaur Boomerang Pallete Fix
+0E6664: Slice / Slisaur Boomerang Pallete Fix
+0E665E: Slice / Slisaur Boomerang Pallete Fix
+0E6668: Slice / Slisaur Boomerang Pallete Fix
+0E6674: Slice / Slisaur Boomerang Pallete Fix
+0E666E: Slice / Slisaur Boomerang Pallete Fix
+0E6678: Slice / Slisaur Boomerang Pallete Fix
+0E6684: Slice / Slisaur Boomerang Pallete Fix
+0E667E: Slice / Slisaur Boomerang Pallete Fix
+0E6688: Slice / Slisaur Boomerang Pallete Fix
+0E669E: Slice / Slisaur Boomerang Pallete Fix
+0E6698: Slice / Slisaur Boomerang Pallete Fix
+0E66A2: Slice / Slisaur Boomerang Pallete Fix
+0E66AE: Slice / Slisaur Boomerang Pallete Fix
+0E66A8: Slice / Slisaur Boomerang Pallete Fix
+0E66B2: Slice / Slisaur Boomerang Pallete Fix
+0E66B6: Slice / Slisaur Boomerang Pallete Fix
+0E66C2: Slice / Slisaur Boomerang Pallete Fix
+0E66BC: Slice / Slisaur Boomerang Pallete Fix
+0E66CE: Slice / Slisaur Boomerang Pallete Fix
+0E66C8: Slice / Slisaur Boomerang Pallete Fix
+0E66DA: Slice / Slisaur Boomerang Pallete Fix
+0E66D4: Slice / Slisaur Boomerang Pallete Fix
+0E66DE: Slice / Slisaur Boomerang Pallete Fix
+0E66EA: Slice / Slisaur Boomerang Pallete Fix
+0E66E4: Slice / Slisaur Boomerang Pallete Fix
+0E66EE: Slice / Slisaur Boomerang Pallete Fix
+0E6706: Slice / Slisaur Boomerang Pallete Fix
+0E6700: Slice / Slisaur Boomerang Pallete Fix
+0E670A: Slice / Slisaur Boomerang Pallete Fix
+0E6716: Slice / Slisaur Boomerang Pallete Fix
+0E6710: Slice / Slisaur Boomerang Pallete Fix
+0E671A: Slice / Slisaur Boomerang Pallete Fix
+0E6726: Slice / Slisaur Boomerang Pallete Fix
+0E6720: Slice / Slisaur Boomerang Pallete Fix
+0E672A: Slice / Slisaur Boomerang Pallete Fix
+0E6736: Slice / Slisaur Boomerang Pallete Fix
+0E6730: Slice / Slisaur Boomerang Pallete Fix
+0E673A: Slice / Slisaur Boomerang Pallete Fix
+0E6746: Slice / Slisaur Boomerang Pallete Fix
+0E6740: Slice / Slisaur Boomerang Pallete Fix
+0E674A: Slice / Slisaur Boomerang Pallete Fix
+0E6756: Slice / Slisaur Boomerang Pallete Fix
+0E6750: Slice / Slisaur Boomerang Pallete Fix
+0E6762: Slice / Slisaur Boomerang Pallete Fix
+0E675C: Slice / Slisaur Boomerang Pallete Fix
+0E6766: Slice / Slisaur Boomerang Pallete Fix
+0E6772: Slice / Slisaur Boomerang Pallete Fix
+0E676C: Slice / Slisaur Boomerang Pallete Fix
+0E6776: Slice / Slisaur Boomerang Pallete Fix
+0E677A: Slice / Slisaur Boomerang Pallete Fix
+0E6786: Slice / Slisaur Boomerang Pallete Fix
+0E6780: Slice / Slisaur Boomerang Pallete Fix
+0E678A: Slice / Slisaur Boomerang Pallete Fix
+0E6796: Slice / Slisaur Boomerang Pallete Fix
+0E6790: Slice / Slisaur Boomerang Pallete Fix
+0E67AC: Slice / Slisaur Boomerang Pallete Fix
+0E67A6: Slice / Slisaur Boomerang Pallete Fix
+0E67B8: Slice / Slisaur Boomerang Pallete Fix
+0E67B2: Slice / Slisaur Boomerang Pallete Fix
+0E67BC: Slice / Slisaur Boomerang Pallete Fix
+0E67C8: Slice / Slisaur Boomerang Pallete Fix
+0E67C2: Slice / Slisaur Boomerang Pallete Fix
+0E67D4: Slice / Slisaur Boomerang Pallete Fix
+0E67CE: Slice / Slisaur Boomerang Pallete Fix
+0E67E0: Slice / Slisaur Boomerang Pallete Fix
+0E67DA: Slice / Slisaur Boomerang Pallete Fix
+0E681A: Slice / Slisaur Boomerang Pallete Fix
+0E6814: Slice / Slisaur Boomerang Pallete Fix
+0E6826: Slice / Slisaur Boomerang Pallete Fix
+0E6820: Slice / Slisaur Boomerang Pallete Fix
+0E6832: Slice / Slisaur Boomerang Pallete Fix
+0E682C: Slice / Slisaur Boomerang Pallete Fix
+0E683E: Slice / Slisaur Boomerang Pallete Fix
+0E6838: Slice / Slisaur Boomerang Pallete Fix
+0E684A: Slice / Slisaur Boomerang Pallete Fix
+0E6844: Slice / Slisaur Boomerang Pallete Fix
+0E6856: Slice / Slisaur Boomerang Pallete Fix
+0E6850: Slice / Slisaur Boomerang Pallete Fix
+0E6862: Slice / Slisaur Boomerang Pallete Fix
+0E685C: Slice / Slisaur Boomerang Pallete Fix
+0E686E: Slice / Slisaur Boomerang Pallete Fix
+0E6868: Slice / Slisaur Boomerang Pallete Fix
+0ED6B8: Slice / Slisaur Boomerang Pallete Fix
+0ED6B2: Slice / Slisaur Boomerang Pallete Fix
+0ED6BC: Slice / Slisaur Boomerang Pallete Fix
+0ED6C8: Slice / Slisaur Boomerang Pallete Fix
+0ED6C2: Slice / Slisaur Boomerang Pallete Fix
+0ED6CC: Slice / Slisaur Boomerang Pallete Fix
+0ED6D0: Slice / Slisaur Boomerang Pallete Fix
+0EE9A6: Slice / Slisaur Boomerang Pallete Fix
+0EE9AA: Slice / Slisaur Boomerang Pallete Fix
+0EE9AE: Slice / Slisaur Boomerang Pallete Fix
+0EE9B2: Slice / Slisaur Boomerang Pallete Fix
+0EEEB6: Slice / Slisaur Boomerang Pallete Fix
+0EEEBA: Slice / Slisaur Boomerang Pallete Fix
+0EEEBE: Slice / Slisaur Boomerang Pallete Fix
+0EEEC2: Slice / Slisaur Boomerang Pallete Fix
+0E679C: Slice / Slisaur Boomerang Pallete Fix
 0EAB38: Boom Label Pallete Fix 1
 0EAB3E: Boom Label Pallete Fix 2
 0EAB44: Boom Label Pallete Fix 3
@@ -613,6 +819,16 @@ Sprite Pallete Fix
 0EE182: Bludge Spit 14 Pallete Fix 4
 0EE186: Bludge Spit 14 Pallete Fix 5
 0EE18A: Bludge Spit 14 Pallete Fix 6
+
+
+Strikebox Improvements
+
+103E98: Butcher Punch Strikebox Position X Improvement
+103E9A: Butcher Punch Strikebox Width Improvement
+10415C: Morgue / Fessenden 1st Slap Strikebox Position X Improvement
+10415E: Morgue / Fessenden 1st Slap Strikebox Width Improvement
+1042B8: Tyrog Slap Strikebox Position X Improvement
+1042BA: Tyrog Slap Strikebox Width Improvement
 
 
 Main Characters Palletes

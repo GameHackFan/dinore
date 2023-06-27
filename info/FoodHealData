@@ -1,25 +1,25 @@
 Barbecue:   100
-Steak:      94
+Steak:      92
 
-Lobster:    80
-Sushi:      74
+Lobster:    86
+Sushi:      80
 
-Hamburguer: 60
-Hotdog:     54
-Pizza:      50
+Hamburger:  60
+Hotdog:     56
+Pizza:      52
+Salad:      48
 
-Salad:      40
 Ice Cream:  38
-Pudding:    36
-Potato:     34
-Cake:       32
+Potato:     36
+Cake:       34
+Pudding:    32
 
 Grape:      26  (Fake)
 Apple:      24  (Fake)
 
-Crossant:   22
-Chocolate:  20
-Donut:      18
-Coffee:     16
-Gum:        14
+Croissant:  22
+Chocolate:  18
+Donut:      14
+Coffee:     10
+Gum:        08
 

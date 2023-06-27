@@ -115,6 +115,8 @@ class ROMService
 
   getGeneratedROM = () =>
   {
+    // NOTE: Use the line below to test with HBMame.
+    // this.generatedROM["c25s283.p1"] = this.generatedROM["cde_re.10f"];
     return this.generatedROM;
   }
 
@@ -224,4 +226,4 @@ class ROMService
 }
 
 
-let romService = new ROMService(); 
+let romService = new ROMService();

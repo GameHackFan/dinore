@@ -2,11 +2,12 @@ FFB274:   Player 1 Character Memory Region
 FFB3F4:   Player 2 Character Memory Region
 FFB574:   Player 3 Character Memory Region
 xxxx02:   Player ID.
-xxxx0C:   Air position (Height)
+xxxx0C:   Air position (Elevation)
 xxxx08:   Ground position X
 xxxx10:   Ground position Y
 xxxx23:   Pallete ID
 xxxx24:   Look Direction (0 look left, 1 look right)
+xxxxA3.B: Player Character Lives
 xxxxC6:   Current Power
 
 xxx182:   Extra Life Flag (use it to fix the immortal bug)
@@ -15,6 +16,7 @@ xxx182:   Extra Life Flag (use it to fix the immortal bug)
 FFD364:   1st enemy memory region?
 xxxx03:   Enemy ID
 xxxx06:   Action / Posture ID?
+xxxx49:   Strike Box ID?
 xxxx6A:   Starting HP (Max 64)
 xxxx6C:   Current HP
 xxxx9A:   Dizzy Flag
@@ -29,6 +31,9 @@ xxxxA6:   Slice Possible Target P3
 xxxxC4:   Slice Timer
 xxxx79:   Enemies unknown timer
 
+
+Dinosaur
+xxxxAA:   Meek Timer (Go away, Shivat >= 708).
 
 
 
@@ -64,4 +69,8 @@ Tyrog
 
 smaller address - bigger address
 lsr 2 for title screen, lsr 7 for in game things
-and 3, now you have 0, 1 and 2 
+and 3, now you have 0, 1 and 2
+
+14B66: Reads Hitbox Position X (Use it to find their position X in ROM).
+14B7A: Reads Hitbox Position Y (Use it to find their position Y in ROM).
+14B86: Reads Hitbox Width and Height (Use it to find their height in ROM).

@@ -113,7 +113,18 @@ const readjustedPatch =
 
 
     // Force Custom Pallete ID Caller (Level Trigger Object Spawn)
-    "65090": ["F9", "4E", "18", "00", "00", "1C"],
+    "65090": ["B9", "4E", "18", "00", "00", "1C"],
+
+    // Force Custom Pallete ID Caller (Hogg Level Trigger Object Spawn)
+    "65286": ["B9", "4E", "18", "00", "00", "1C"],
+
+
+
+    // Force Enemies to Spawn With Maximum Rage (Level Trigger Object Spawn)
+    "65108": ["7C", "11", "FF", "00", "5B", "00"],
+
+    // Force Enemies to Spawn With Maximum Rage (Hogg Level Trigger Object Spawn)
+    "65304": ["7C", "11", "FF", "00", "5B", "00"],
 
 
 
@@ -395,16 +406,16 @@ const readjustedPatch =
     ],
 
 
-    // Set Frame Based Custom Pallete Caller (Weapon)
+    // Set Random Custom Pallete ID Caller (Weapon Drop)
     "150416": ["B9", "4E", "18", "00", "90", "1C"],
 
     // Resets Pallete ID Caller (Food Drop)
     "150484": ["B9", "4E", "18", "00", "D0", "1C"],
 
-    // Set Frame Based Custom Pallete Caller (Treasure)
+    // Set Random Custom Pallete ID Caller (Treasure Drop)
     "150542": ["B9", "4E", "18", "00", "B0", "1C"],
 
-    // Set Frame Based Custom Pallete Caller (Ammo)
+    // Set Random Custom Pallete ID Caller (Ammo Drop)
     "150666": ["F9", "4E", "18", "00", "60", "1C"],
 
 
@@ -460,6 +471,11 @@ const readjustedPatch =
 
 
 
+    // Set Random Custom Pallete ID Caller (Barrels)
+    "167298": ["B9", "4E", "18", "00", "90", "1D"],
+
+
+
     // Rifle Ammo Refill (after grabbing ammo)
     "165210": ["08"],
 
@@ -483,6 +499,16 @@ const readjustedPatch =
       "B8", "00", "54", "67"
     ],
 
+    // Explosive Barrel Blink Pallete Fix
+    "167798":
+    [
+      "6E", "1D", "BE", "00", "23", "00", "6E", "30",
+      "70", "00", "10", "4A", "00", "67", "C2", "00",
+      "E8", "BC", "B4", "00", "00", "66", "BA", "00",
+      "2E", "30", "A0", "00", "68", "B0", "B6", "00",
+      "00", "66", "AE", "00", "00", "61", "FE", "BA"      
+    ],
+
     // Pallete Fix 11 (Current Object / Character)
     "172166":
     [
@@ -500,6 +526,26 @@ const readjustedPatch =
 
 
 
+    // Broken Pieces Custom Pallete ID Fix Caller (Rod)
+    "154098": ["B9", "4E", "18", "00", "00", "1D"],
+
+    // Broken Pieces Custom Pallete ID Fix Caller (Metal Barrel Top)
+    "168624": ["B9", "4E", "18", "00", "00", "1D"],
+
+    // Broken Pieces Custom Pallete ID Fix Caller (Metal Barrel Bottom)
+    "168704": ["B9", "4E", "18", "00", "00", "1D"],
+
+    // Broken Pieces Custom Pallete ID Fix Caller (Sharp and Round Rock, Unused Barrels)
+    "169154": ["B9", "4E", "18", "00", "00", "1D"],
+
+    // Broken Pieces Custom Pallete ID Fix Caller (Statue)
+    "607818": ["B9", "4E", "18", "00", "00", "1D"],
+
+    // Broken Pieces Custom Pallete ID Fix Caller (Wooden Barrel and Tires)
+    "607954": ["B9", "4E", "18", "00", "00", "1D"],
+
+
+
     // Enemy Knocked Down Callback Caller
     "176100": ["F9", "4E", "18", "00", "00", "0C"],
 
@@ -512,6 +558,16 @@ const readjustedPatch =
 
     // Pallete Fix 13 (Current Object / Character)
     "177498": ["6E", "1D", "DE", "00", "23", "00", "71", "4E"],
+
+
+
+    // Remove Custom Pallete (Lash Terhune)
+    "219402":
+    [
+      "BC", "10", "01", "00", "7C", "31", "0C", "00",
+      "20", "00", "68", "42", "26", "00", "68", "42",
+      "DE", "00"
+    ],
 
 
 
@@ -578,6 +634,11 @@ const readjustedPatch =
 
 
 
+    // Set Random Custom Pallete ID Caller (Rolling Barrels)
+    "375100": ["B9", "4E", "18", "00", "D0", "1D"],
+    
+
+
     // Morgan Uzi Drop Pallete Reset Caller
     "376748": ["B9", "4E", "18", "00", "D0", "1C"],
 
@@ -596,15 +657,6 @@ const readjustedPatch =
 
 
 
-    // Force Tyrog to wake up moving if the player is too close
-    "226326":
-    [
-      "7C", "1D", "30", "00", "06", "00", "7C", "3D",
-      "3C", "00", "AC", "00", "7C", "1D", "00", "00",
-      "B9", "00", "B9", "4E", "03", "00", "58", "2A",
-      "14", "70"
-    ],
-
     // Tyrog Try To Change To Slap Action Caller (Spine Action)
     "228666": ["F9", "4E", "18", "00", "80", "18"],
 
@@ -613,17 +665,6 @@ const readjustedPatch =
 
     // Tyrog Try To Change To Slap Action Caller (Puke Action)
     "229254": ["F9", "4E", "18", "00", "80", "18"],
-
-
-
-    // Force Morgan to wake up moving if the player is too close
-    "337868":
-    [
-      "7C", "1D", "1A", "00", "06", "00", "7C", "3D",
-      "3C", "00", "AC", "00", "7C", "1D", "00", "00",
-      "B9", "00", "B9", "4E", "03", "00", "58", "2A",
-      "0A", "70" 
-    ],
 
 
 
@@ -673,9 +714,8 @@ const readjustedPatch =
 
 
 
-
-    // Rock Breaking Into Pieces Pallete Reset Caller
-    "604026": ["B9", "4E", "18", "00", "D0", "1C"],
+    // Custom Pallete ID Fix Caller (Round / Sharp Rock Broken Stone Drops)
+    "604026": ["B9", "4E", "18", "00", "30", "1D"],
     
 
 
@@ -686,8 +726,10 @@ const readjustedPatch =
     "618976": ["F9", "4E", "18", "00", "00", "06"],
 
 
+
     // Set Custom Pallete ID Caller (Fessenden Body Parts)
-    "620118": ["F9", "4E", "18", "00", "40", "1D"],
+    "620118": ["F9", "4E", "18", "00", "60", "1D"],
+
 
 
     // Title Screen Text Renderer Caller (No Coin 1)
@@ -1210,7 +1252,7 @@ const readjustedPatch =
     "1577216":
     [
       "65", "52", "64", "61", "75", "6A", "74", "73",
-      "64", "65", "76", "20", "2E", "31", "20", "33",
+      "64", "65", "76", "20", "2E", "31", "20", "34",   // Version 2E 31 20 34
       "62", "28", "20", "79", "61", "47", "65", "6D",
       "61", "48", "6B", "63", "61", "46", "29", "6E"
     ],
@@ -1408,6 +1450,16 @@ const readjustedPatch =
       "06", "DC", "2D", "DC", "86", "07", "75", "4E"      
     ],
 
+    // Randomizes a Value Inside D0.
+    "1579696":
+    [
+      "80", "42", "2D", "30", "FE", "7E", "FC", "C0",
+      "A7", "41", "40", "3B", "FE", "7E", "80", "42",
+      "2D", "10", "C2", "75", "6D", "D0", "FE", "7E",
+      "88", "E8", "40", "3B", "FE", "7E", "80", "42",
+      "2D", "30", "FE", "7E", "75", "4E"
+    ],
+
     // Player Pallete Fix
     "1579776":
     [
@@ -1448,30 +1500,30 @@ const readjustedPatch =
       "00", "00", "6D", "11", "30", "7F", "23", "00",
       "2A", "30", "08", "00", "7C", "C0", "FF", "07",
       "40", "31", "10", "00", "40", "42", "40", "48",
-      "F9", "4E", "00", "00", "48", "FE"
+      "75", "4E"
     ],
 
-    // Set Frame Based Custom Pallete (Ammo Drop)
+    // Set Random Custom Pallete ID (Ammo Drop)
     "1580128":
     [
-      "2D", "10", "C2", "75", "7C", "C0", "01", "00",
+      "00", "61", "4E", "FE", "7C", "C0", "01", "00",
       "3B", "10", "12", "00", "40", "11", "BE", "00",
       "BC", "10", "01", "00", "F9", "4E", "02", "00",
       "90", "4C", "00", "00", "86", "00", "00", "00"
     ],
 
-    // Set Frame Based Custom Pallete (Weapon Drop)
+    // Set Random Custom Pallete ID (Weapon Drop)
     "1580176":
     [
-      "2D", "42", "30", "7F", "6A", "61", "BC", "10",
-      "01", "00", "75", "4E"
+      "2D", "42", "30", "7F", "00", "61", "6A", "02",
+      "BC", "10", "01", "00", "75", "4E"
     ],
 
-    // Set Frame Based Custom Pallete (Treasure Drop)
+    // Set Random Custom Pallete ID (Treasure Drop)
     "1580208":
     [
-      "7C", "1B", "50", "00", "30", "7F", "48", "61",
-      "BC", "10", "01", "00", "75", "4E"
+      "7C", "1B", "50", "00", "30", "7F", "00", "61",
+      "48", "02", "BC", "10", "01", "00", "75", "4E"
     ],
 
     // Resets Pallete ID (Food Drop)
@@ -1481,18 +1533,24 @@ const readjustedPatch =
       "BC", "10", "01", "00", "75", "4E"
     ],
 
-    // Set Frame Based Custom Pallete (Current Object)
+    // Broken Pieces Custom Pallete ID Fix (Object).
     "1580288":
     [
-      "01", "30", "40", "D0", "40", "D0", "2D", "D1",
-      "30", "7F", "2D", "10", "C2", "75", "7C", "C0",
-      "03", "00", "2D", "D0", "30", "7F", "3B", "10",
-      "58", "00", "40", "11", "BE", "00", "40", "11",
-      "23", "00", "75", "4E"
+      "BC", "10", "01", "00", "6E", "11", "BE", "00",
+      "7E", "00", "6E", "11", "23", "00", "23", "00",
+      "75", "4E"
+    ],
+
+    // Custom Pallete ID Transfer Fix (Object)
+    "1580336":
+    [
+      "BC", "10", "01", "00", "6E", "11", "23", "00",
+      "BE", "00", "6E", "11", "23", "00", "23", "00",
+      "75", "4E"
     ],
 
     // Set Custom Pallete ID (Fessenden Body Parts)
-    "1580352":
+    "1580384":
     [
       "3C", "B6", "07", "00", "08", "67", "7C", "11",
       "81", "00", "23", "00", "06", "60", "7C", "11",
@@ -1500,9 +1558,87 @@ const readjustedPatch =
       "F9", "4E", "09", "00", "5C", "76"
     ],
 
-    // Weapon Pallete ID List
-    "1580400":
+    // Sets Random Custom Pallete ID (Barrels)
+    "1580432":
     [
+      "6E", "3D", "10", "00", "B4", "00", "2E", "4A",
+      "BE", "00", "0C", "66", "2E", "10", "27", "00",
+      "3B", "30", "0E", "00", "FB", "4E", "00", "00",
+      "75", "4E", "00", "00", "00", "00", "00", "00",
+
+      // Barrel Code To Execute Offset
+      "6A", "00", "02", "00", "9A", "00", "6A", "00", 
+      "02", "00", "9A", "00", "6A", "00", "02", "00"
+    ],
+
+    // Sets Random Custom Pallete ID (Rolling Barrels)
+    "1580496":
+    [
+      "2E", "4A", "DE", "00", "1E", "66", "40", "42",
+      "2E", "10", "27", "00", "00", "D0", "3B", "30",
+      "18", "00", "BB", "4E", "00", "00", "6E", "42",
+      "BE", "00", "41", "1D", "DE", "00", "00", "70",
+      "40", "1D", "59", "00", "75", "4E", "00", "00",
+
+      // Barrel Code To Execute Offset
+      "2C", "00", "5C", "00", "02", "00", "02", "00", 
+    ],
+
+    // Sets Random Custom Pallete ID (05 or 06)
+    "1580576":
+    [
+      "00", "61", "8E", "FC", "7C", "C0", "01", "00",
+      "40", "06", "85", "00", "40", "1D", "BE", "00",
+      "40", "1D", "23", "00", "75", "4E"
+    ],
+
+    // Sets Random Custom Pallete ID From a List (Area Based List)
+    "1580608":
+    [
+      "2D", "12", "D9", "04", "49", "E5", "2D", "D2",
+      "86", "07", "49", "E5", "00", "61", "62", "FC",
+      "7C", "C0", "03", "00", "01", "D0", "3B", "12",
+      "18", "00", "41", "1D", "BE", "00", "41", "1D",
+      "23", "00", "75", "4E", "00", "00", "00", "00",
+      "00", "00", "00", "00", "00", "00", "00", "00",
+
+      // Area Based Pallete IDs List
+      "8B", "88", "9D", "9C", "89", "88", "9C", "8B",
+      "91", "88", "9C", "92", "91", "88", "9C", "92",
+
+      "98", "88", "9E", "9A", "89", "88", "9F", "9E",
+      "89", "88", "89", "88", "89", "88", "89", "88",
+
+      "89", "88", "9D", "88", "89", "88", "9D", "88",
+      "89", "88", "9D", "88", "89", "88", "9D", "88",
+
+      "89", "88", "8C", "88", "89", "88", "89", "88",
+      "89", "88", "89", "88", "89", "88", "89", "88",
+
+      "89", "88", "9F", "9E", "89", "88", "89", "88",
+      "89", "88", "89", "88", "89", "88", "89", "88",
+
+      "89", "88", "89", "88", "89", "88", "89", "88",
+      "89", "88", "9F", "9D", "9D", "88", "9F", "9E",
+
+      "9D", "88", "9F", "9D", "89", "88", "89", "88",
+      "89", "88", "89", "88", "89", "88", "89", "88",
+
+      "9D", "88", "9F", "9E", "89", "88", "89", "88",
+      "89", "88", "9E", "9D", "89", "88", "9E", "9D"
+    ],
+
+    // Sets Random Custom Pallete ID From a List (Current Object)
+    "1580800":
+    [
+      "01", "30", "40", "D0", "40", "D0", "2D", "D1",
+      "30", "7F", "00", "61", "A4", "FB", "7C", "C0",
+      "03", "00", "2D", "D0", "30", "7F", "3B", "10",
+      "18", "00", "40", "11", "BE", "00", "40", "11",
+      "23", "00", "75", "4E", "00", "00", "00", "00",
+      "00", "00", "00", "00", "00", "00", "00", "00",
+
+      // Weapon Pallete ID List
       "00", "00", "00", "00", "86", "00", "86", "00",
       "86", "00", "86", "00", "00", "00", "00", "00",
       "86", "00", "89", "86", "86", "00", "89", "86",
@@ -1510,12 +1646,11 @@ const readjustedPatch =
       "83", "00", "86", "00", "83", "00", "86", "00",
       "00", "00", "00", "00", "83", "00", "86", "00",
       "83", "00", "86", "00", "83", "00", "85", "00",
-      "86", "00", "89", "86", "00", "00", "00", "00"
-    ],
+      "86", "00", "89", "86", "00", "00", "00", "00",
+      "00", "00", "00", "00", "00", "00", "00", "00",
+      "00", "00", "00", "00", "00", "00", "00", "00",
 
-    // Treasure Pallete ID List
-    "1580480":
-    [
+      // Treasure Pallete ID List
       "83", "00", "83", "00", "86", "00", "89", "88",
       "83", "00", "83", "00", "86", "85", "86", "85",
       "83", "00", "83", "00", "89", "00", "89", "00",
@@ -1524,7 +1659,7 @@ const readjustedPatch =
       "86", "00", "86", "00", "86", "00", "86", "00",
       "88", "00", "88", "00", "86", "00", "89", "88",
       "95", "00", "83", "00", "89", "00", "89", "00",
-      "86", "00", "89", "88"
+      "86", "00", "89", "88", "00", "00", "00", "00",
     ]
   }
 }
