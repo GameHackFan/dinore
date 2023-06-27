@@ -9,18 +9,11 @@ You can access the patcher [here](https://gamehackfan.github.io/dinore/).
 Version 1.4:
 - Added support for object spawning with custom pallete ID in Hogg area.
 - Improved the way Ammo, Weapons and Treasure custom pallete ID are randomized.
-<<<<<<< HEAD
 - Fixed a bug in which Lash Terhune was grabbing a wrong pallete after being hit by fire.
 - Fixed a bug in which Rod broken piece was not grabbing Rod's custom pallete.
 - Fixed a bug in which Explosive Barrels were not resetting their color after being grabbed.
 - Forced all Slice / Slisaur Boomerang sprites to use pallete 16.
 - Improved All Hannah's colors.
-=======
-- Fixed a bug where Rod broken piece was not grabbing Rod's custom pallete.
-- Fixed a bug where Explosive Barrels were not resetting their color after being grabbed.
-- Forced all Slice / Slisaur Boomerang sprites to use pallete 16.
-- Improved Hannah's 3rd color.
->>>>>>> branch 'main' of https://github.com/GameHackFan/dinore.git
 - Improved Hannah Custom Pallete (pallete 03), the one that is used by body parts and objects.
 - Barrels now spawn with a random custom pallete ID optimized by area.
 - Butcher actions were changed, see change A to D.
