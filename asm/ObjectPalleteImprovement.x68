@@ -370,7 +370,6 @@
 
 
 
-<<<<<<< HEAD
 ; ORG         $3590A                    ; Replace 3590A (There is space to replace everything).
 
                                         ; Block of code that removes custom pallete ID (Lash Terhune).
@@ -381,8 +380,6 @@
 
 
 
-=======
->>>>>>> branch 'main' of https://github.com/GameHackFan/dinore.git
 ; This module has a routine that allows objects / enemies to
 ; spawn with a custom pallete ID. It also modifies some code to 
 ; allow the custom pallete ID instead of resetting it to original.
@@ -415,10 +412,7 @@
 ; 02A086:   Force Custom Pallete ID 11 / Pallete Fix 12 (Current Object / Character)
 ; 02AD42:   Force Custom Pallete ID 12 / Pallete Fix 13 (Current Object / Character)
 ; 02B55A:   Force Custom Pallete ID 13 / Pallete Fix 14 (Current Object / Character)
-<<<<<<< HEAD
 ; 03590A:   Remove Custom Pallete (Lash Terhune)
-=======
->>>>>>> branch 'main' of https://github.com/GameHackFan/dinore.git
 ;
 ; 181C7C:   Random Custom Pallete ID Data (Ammo, add the data below)
 ;           86 00
