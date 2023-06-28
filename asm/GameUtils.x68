@@ -58,11 +58,7 @@
 
 ; ORG         $181AB0
 
-<<<<<<< HEAD
                                         ; Block of code that randomizes a value in D0.
-=======
-                                        ; Block of code that stores the current time inside D6.
->>>>>>> branch 'main' of https://github.com/GameHackFan/dinore.git
   CLR.L       D0                        ; Clears D0.
   MOVE.W      ($7EFE, A5), D0           ; Stores ($7EFE + A5) inside D0, the seed value.
   MULU.W      #$41A7, D0                ; Multiples D0 by 41A7, part of the randomization calc.
